@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Contact - Blue Radiance Marine Company</title>
+
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="animations.css">
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+        body{
+            font-family:Arial, sans-serif;
+            background:#f5f8ff;
+            color:#222;
+        }
+
+        .navbar{
+            background:white;
+            padding:20px 25px;
+            position:sticky;
+            top:0;
+            z-index:1000;
+            box-shadow:0 2px 15px rgba(0,0,0,0.08);
+        }
+
+        .nav-container{
+            max-width:1300px;
+            margin:auto;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+        }
+
+        .logo{
+            text-decoration:none;
+            display:flex;
+            align-items:center;
+            gap:10px;
+        }
+
+        .logo-img{
+            width:48px;
+            height:auto;
+            border-radius:6px;
+            object-fit:contain;
+        }
+
+        .logo-text{
+            font-size:30px;
+            font-weight:700;
+            color:#003b95;
+        }
+
+        .nav-menu{
+            display:flex;
+            list-style:none;
+            gap:35px;
+        }
+
+        .nav-menu li a{
+            text-decoration:none;
+            color:#003b95;
+            font-size:18px;
+            font-weight:600;
+            transition:0.3s;
+        }
+
+        .nav-menu li a:hover{
+            color:#0077ff;
+        }
+
+        .hero{
+            background:linear-gradient(135deg,#003b95,#009dff);
+            color:white;
+            text-align:center;
+            padding:120px 20px;
+        }
+
+        .hero h1{
+            font-size:70px;
+            margin-bottom:20px;
+        }
+
+        .hero p{
+            font-size:24px;
+            max-width:900px;
+            margin:auto;
+            line-height:1.7;
+        }
+
+        .contact-section{
+            max-width:1400px;
+            margin:80px auto;
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+            gap:35px;
+            padding:0 20px;
+        }
+
+        .contact-box{
+            background:white;
+            padding:40px;
+            border-radius:22px;
+            box-shadow:0 10px 30px rgba(0,0,0,0.08);
+            transition:0.4s;
+            border:2px solid transparent;
+        }
+
+        .contact-box:hover{
+            transform:translateY(-12px) scale(1.03);
+            border-color:#0077ff;
+            box-shadow:0 20px 40px rgba(0,119,255,0.25);
+        }
+
+        .contact-box h2{
+            color:#003b95;
+            margin-bottom:25px;
+            font-size:32px;
+        }
+
+        .contact-box p,
+        .contact-box a{
+            font-size:20px;
+            line-height:2;
+            text-decoration:none;
+            color:#333;
+            word-break:normal;
+            overflow-wrap:normal;
+        }
+
+        .contact-box a{
+            display:block;
+        }
+
+        .contact-box a:hover{
+            color:#0077ff;
+        }
+
+        /* Contact form styles */
+        .contact-form{
+            padding:30px 32px;
+        }
+
+        .contact-form .form-row{
+            display:flex;
+            gap:14px;
+            margin-bottom:14px;
+        }
+
+        .contact-form input[type="text"],
+        .contact-form input[type="email"],
+        .contact-form input[type="tel"],
+        .contact-form select,
+        .contact-form textarea{
+            width:100%;
+            padding:12px 14px;
+            border:1px solid #e3e8ef;
+            border-radius:10px;
+            font-size:16px;
+            color:#223;
+            background:#fff;
+        }
+
+        .contact-form textarea{ resize:vertical; }
+
+        @media(max-width:768px){
+            .contact-form .form-row{ flex-direction:column; }
+        }
+
+        .cta{
+            text-align:center;
+            padding:90px 20px;
+        }
+
+        .cta h2{
+            font-size:60px;
+            color:#003b95;
+            margin-bottom:25px;
+        }
+
+        .cta p{
+            font-size:24px;
+            max-width:950px;
+            margin:auto;
+            line-height:1.8;
+            color:#555;
+        }
+
+        .btn-group{
+            margin-top:45px;
+            display:flex;
+            justify-content:center;
+            flex-wrap:wrap;
+            gap:25px;
+        }
+
+        .btn{
+            padding:18px 42px;
+            border-radius:50px;
+            text-decoration:none;
+            font-size:20px;
+            font-weight:bold;
+            transition:0.4s;
+        }
+
+        .btn-primary{
+            background:#0066ff;
+            color:white;
+        }
+
+        .btn-primary:hover{
+            background:#004fc7;
+            transform:translateY(-5px);
+        }
+
+        .btn-outline{
+            border:2px solid #0066ff;
+            color:#0066ff;
+            background:white;
+        }
+
+        .btn-outline:hover{
+            background:#0066ff;
+            color:white;
+            transform:translateY(-5px);
+        }
+
+        footer{
+            background:linear-gradient(135deg,#003b95,#009dff);
+            color:white;
+            text-align:center;
+            padding:35px 20px;
+            margin-top:80px;
+        }
+
+        footer p{
+            font-size:18px;
+            margin:10px 0;
+        }
+
+        @media(max-width:768px){
+
+            .hero h1{
+                font-size:45px;
+            }
+
+            .hero p{
+                font-size:18px;
+            }
+
+            .cta h2{
+                font-size:40px;
+            }
+
+            .nav-container{
+                flex-direction:column;
+                gap:20px;
+            }
+
+            .nav-menu{
+                gap:18px;
+                flex-wrap:wrap;
+                justify-content:center;
+            }
+
+            .logo-text{
+                font-size:24px;
+            }
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <nav class="navbar">
+
+        <div class="nav-container">
+
+            <a href="index.html" class="logo">
+                <img src="images/Img.PNG" alt="Blue Radiance logo" class="logo-img">
+                <span class="logo-text">
+                    Blue Radiance Marine Company
+                </span>
+            </a>
+
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+
+        </div>
+
+    </nav>
+
+    <section class="hero">
+
+        <h1>Contact Us</h1>
+
+        <p>
+            Professional marine logistics and offshore support services
+            across Saudi Arabia.
+        </p>
+
+    </section>
+
+    <section class="contact-section">
+
+        <div class="contact-form contact-box">
+            <h2>Get in Touch</h2>
+
+            <div id="successMessage" style="display:none;padding:14px;border-radius:10px;background:#e6ffef;color:#063;box-shadow:0 4px 12px rgba(0,0,0,0.04);margin-bottom:12px;">Thank you — your message has been received. We'll contact you shortly.</div>
+
+            <form id="contactForm">
+                <div class="form-row">
+                    <input type="text" id="name" name="name" placeholder="Full name" required>
+                    <input type="text" id="company" name="company" placeholder="Company (optional)">
+                </div>
+
+                <div class="form-row">
+                    <input type="email" id="email" name="email" placeholder="Email address" required>
+                    <input type="tel" id="phone" name="phone" placeholder="Phone number">
+                </div>
+
+                <div class="form-row">
+                    <select id="service" name="service" required>
+                        <option value="">Select a service</option>
+                        <option>Marine Logistics</option>
+                        <option>Offshore Support</option>
+                        <option>Port Assistance</option>
+                        <option>Equipment Supply</option>
+                    </select>
+                </div>
+
+                <div class="form-row">
+                    <textarea id="message" name="message" rows="5" placeholder="Your message" required></textarea>
+                </div>
+
+                <div style="text-align:right;">
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="contact-box">
+
+            <h2>Operations Email</h2>
+
+            <a href="mailto:operations@theblueradiance.com">
+                operations@theblueradiance.com
+            </a>
+
+        </div>
+
+        <div class="contact-box" style="display:flex;align-items:center;justify-content:center;">
+            <img src="images/whatsapp1.jpg" alt="operations image" style="max-width:320px;border-radius:18px;box-shadow:0 10px 30px rgba(0,0,0,0.08);">
+        </div>
+
+        <div class="contact-box">
+
+            <h2>IT Department</h2>
+
+            <a href="mailto:ithead@theblueradiance.com">
+                ithead@theblueradiance.com
+            </a>
+
+        </div>
+
+        <div class="contact-box">
+
+            <h2>Contact Numbers</h2>
+
+            <p>+966 54 424 5560</p>
+
+            <p>+966 56 812 0210</p>
+
+        </div>
+
+        <div class="contact-box">
+
+            <h2>Head Office</h2>
+
+            <p>
+                Dammam, Eastern Province,<br>
+                Kingdom of Saudi Arabi
+            </p>
+
+            <br>
+
+            <a href="https://www.theblueradiance.com">
+                www.theblueradiance.com
+            </a>
+
+        </div>
+
+    </section>
+
+    <section class="map-section" style="padding:0 20px 60px;">
+        <div class="container" style="max-width:1200px;margin:40px auto;">
+            <h2 style="text-align:center;color:var(--primary-blue);margin-bottom:18px;">Our Location</h2>
+            <div style="width:100%;height:0;padding-bottom:56%;position:relative;border-radius:12px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,0.08)">
+                <iframe
+                    src="https://www.google.com/maps?q=Dammam,+Eastern+Province,+Kingdom+of+Saudi+Arabia&output=embed"
+                    style="border:0;position:absolute;top:0;left:0;width:100%;height:100%;"
+                    allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+            <p style="text-align:center;margin-top:14px;color:#555;">Head Office: Dammam, Eastern Province, Kingdom of Saudi Arabia — <a href="https://www.google.com/maps?q=Dammam,+Eastern+Province,+Kingdom+of+Saudi+Arabia" target="_blank" rel="noopener noreferrer">View on Google Maps</a></p>
+        </div>
+    </section>
+
+    <section class="cta">
+
+        <h2>Let’s Work Together</h2>
+
+        <p>
+            Our team is available for marine logistics,
+            offshore operational support,
+            vessel coordination,
+            and enterprise solutions.
+        </p>
+
+        <div class="btn-group">
+
+            <a href="mailto:operations@theblueradiance.com"
+               class="btn btn-primary">
+               Email Operations
+            </a>
+
+            <a href="mailto:ithead@theblueradiance.com"
+               class="btn btn-outline">
+               Contact IT Team
+            </a>
+
+        </div>
+
+    </section>
+
+    <footer>
+
+        <p>
+            © 2026 Blue Radiance Marine Company
+        </p>
+
+        <p>
+            Marine • Logistics • Offshore
+        </p>
+
+    </footer>
+
+</body>
+
+</html>
