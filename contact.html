@@ -134,8 +134,6 @@
             line-height:2;
             text-decoration:none;
             color:#333;
-            word-break:normal;
-            overflow-wrap:normal;
         }
 
         .contact-box a{
@@ -146,7 +144,6 @@
             color:#0077ff;
         }
 
-        /* Contact form styles */
         .contact-form{
             padding:30px 32px;
         }
@@ -171,10 +168,8 @@
             background:#fff;
         }
 
-        .contact-form textarea{ resize:vertical; }
-
-        @media(max-width:768px){
-            .contact-form .form-row{ flex-direction:column; }
+        .contact-form textarea{
+            resize:vertical;
         }
 
         .cta{
@@ -211,6 +206,8 @@
             font-size:20px;
             font-weight:bold;
             transition:0.4s;
+            border:none;
+            cursor:pointer;
         }
 
         .btn-primary{
@@ -235,6 +232,16 @@
             transform:translateY(-5px);
         }
 
+        .digital-btn{
+            background:linear-gradient(135deg,#003b95,#009dff);
+            color:white;
+            box-shadow:0 10px 25px rgba(0,119,255,0.35);
+        }
+
+        .digital-btn:hover{
+            transform:translateY(-5px) scale(1.03);
+        }
+
         footer{
             background:linear-gradient(135deg,#003b95,#009dff);
             color:white;
@@ -246,6 +253,62 @@
         footer p{
             font-size:18px;
             margin:10px 0;
+        }
+
+        #cardPopup{
+            display:none;
+            position:fixed;
+            top:0;
+            left:0;
+            width:100%;
+            height:100%;
+            background:rgba(0,0,0,0.7);
+            z-index:99999;
+            justify-content:center;
+            align-items:center;
+            padding:20px;
+        }
+
+        .popup-content{
+            background:white;
+            width:95%;
+            max-width:420px;
+            border-radius:25px;
+            overflow:hidden;
+            position:relative;
+            box-shadow:0 20px 60px rgba(0,0,0,0.35);
+            animation:popupShow 0.4s ease;
+        }
+
+        .close-popup{
+            position:absolute;
+            top:15px;
+            right:18px;
+            background:none;
+            border:none;
+            font-size:32px;
+            cursor:pointer;
+            z-index:999;
+            color:#333;
+        }
+
+        .popup-content iframe{
+            width:100%;
+            height:720px;
+            border:none;
+        }
+
+        @keyframes popupShow{
+
+            from{
+                opacity:0;
+                transform:scale(0.8);
+            }
+
+            to{
+                opacity:1;
+                transform:scale(1);
+            }
         }
 
         @media(max-width:768px){
@@ -276,6 +339,14 @@
             .logo-text{
                 font-size:24px;
             }
+
+            .contact-form .form-row{
+                flex-direction:column;
+            }
+
+            .popup-content iframe{
+                height:650px;
+            }
         }
 
     </style>
@@ -284,182 +355,242 @@
 
 <body>
 
-    <nav class="navbar">
+<nav class="navbar">
 
-        <div class="nav-container">
+    <div class="nav-container">
 
-            <a href="index.html" class="logo">
-                <img src="images/Img.PNG" alt="Blue Radiance logo" class="logo-img">
-                <span class="logo-text">
-                    Blue Radiance Marine Company
-                </span>
-            </a>
+        <a href="index.html" class="logo">
+            <img src="images/Img.PNG" alt="Logo" class="logo-img">
 
-            <ul class="nav-menu">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
+            <span class="logo-text">
+                Blue Radiance Marine Company
+            </span>
+        </a>
 
-        </div>
+        <ul class="nav-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
 
-    </nav>
+    </div>
 
-    <section class="hero">
+</nav>
 
-        <h1>Contact Us</h1>
+<section class="hero">
 
-        <p>
-            Professional marine logistics and offshore support services
-            across Saudi Arabia.
-        </p>
+    <h1>Contact Us</h1>
 
-    </section>
+    <p>
+        Professional marine logistics and offshore support services
+        across Saudi Arabia.
+    </p>
 
-    <section class="contact-section">
+</section>
 
-        <div class="contact-form contact-box">
-            <h2>Get in Touch</h2>
+<section class="contact-section">
 
-            <div id="successMessage" style="display:none;padding:14px;border-radius:10px;background:#e6ffef;color:#063;box-shadow:0 4px 12px rgba(0,0,0,0.04);margin-bottom:12px;">Thank you — your message has been received. We'll contact you shortly.</div>
+    <div class="contact-form contact-box">
 
-            <form id="contactForm">
-                <div class="form-row">
-                    <input type="text" id="name" name="name" placeholder="Full name" required>
-                    <input type="text" id="company" name="company" placeholder="Company (optional)">
-                </div>
+        <h2>Get in Touch</h2>
 
-                <div class="form-row">
-                    <input type="email" id="email" name="email" placeholder="Email address" required>
-                    <input type="tel" id="phone" name="phone" placeholder="Phone number">
-                </div>
+        <form>
 
-                <div class="form-row">
-                    <select id="service" name="service" required>
-                        <option value="">Select a service</option>
-                        <option>Marine Logistics</option>
-                        <option>Offshore Support</option>
-                        <option>Port Assistance</option>
-                        <option>Equipment Supply</option>
-                    </select>
-                </div>
-
-                <div class="form-row">
-                    <textarea id="message" name="message" rows="5" placeholder="Your message" required></textarea>
-                </div>
-
-                <div style="text-align:right;">
-                    <button type="submit" class="btn btn-primary">Send Message</button>
-                </div>
-            </form>
-        </div>
-
-        <div class="contact-box">
-
-            <h2>Operations Email</h2>
-
-            <a href="mailto:operations@theblueradiance.com">
-                operations@theblueradiance.com
-            </a>
-
-        </div>
-
-        <div class="contact-box" style="display:flex;align-items:center;justify-content:center;">
-            <img src="images/whatsapp1.jpg" alt="operations image" style="max-width:320px;border-radius:18px;box-shadow:0 10px 30px rgba(0,0,0,0.08);">
-        </div>
-
-        <div class="contact-box">
-
-            <h2>IT Department</h2>
-
-            <a href="mailto:ithead@theblueradiance.com">
-                ithead@theblueradiance.com
-            </a>
-
-        </div>
-
-        <div class="contact-box">
-
-            <h2>Contact Numbers</h2>
-
-            <p>+966 54 424 5560</p>
-
-            <p>+966 56 812 0210</p>
-
-        </div>
-
-        <div class="contact-box">
-
-            <h2>Head Office</h2>
-
-            <p>
-                Dammam, Eastern Province,<br>
-                Kingdom of Saudi Arabi
-            </p>
-
-            <br>
-
-            <a href="https://www.theblueradiance.com">
-                www.theblueradiance.com
-            </a>
-
-        </div>
-
-    </section>
-
-    <section class="map-section" style="padding:0 20px 60px;">
-        <div class="container" style="max-width:1200px;margin:40px auto;">
-            <h2 style="text-align:center;color:var(--primary-blue);margin-bottom:18px;">Our Location</h2>
-            <div style="width:100%;height:0;padding-bottom:56%;position:relative;border-radius:12px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,0.08)">
-                <iframe
-                    src="https://www.google.com/maps?q=Dammam,+Eastern+Province,+Kingdom+of+Saudi+Arabia&output=embed"
-                    style="border:0;position:absolute;top:0;left:0;width:100%;height:100%;"
-                    allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-                </iframe>
+            <div class="form-row">
+                <input type="text" placeholder="Full name">
+                <input type="text" placeholder="Company">
             </div>
-            <p style="text-align:center;margin-top:14px;color:#555;">Head Office: Dammam, Eastern Province, Kingdom of Saudi Arabia — <a href="https://www.google.com/maps?q=Dammam,+Eastern+Province,+Kingdom+of+Saudi+Arabia" target="_blank" rel="noopener noreferrer">View on Google Maps</a></p>
+
+            <div class="form-row">
+                <input type="email" placeholder="Email address">
+                <input type="tel" placeholder="Phone number">
+            </div>
+
+            <div class="form-row">
+                <select>
+                    <option>Select a service</option>
+                    <option>Marine Logistics</option>
+                    <option>Offshore Support</option>
+                    <option>Port Assistance</option>
+                    <option>Equipment Supply</option>
+                </select>
+            </div>
+
+            <div class="form-row">
+                <textarea rows="5" placeholder="Your message"></textarea>
+            </div>
+
+            <div style="text-align:right;">
+                <button type="submit" class="btn btn-primary">
+                    Send Message
+                </button>
+            </div>
+
+        </form>
+
+    </div>
+
+    <div class="contact-box">
+
+        <h2>Operations Email</h2>
+
+        <a href="mailto:operations@theblueradiance.com">
+            operations@theblueradiance.com
+        </a>
+
+    </div>
+
+    <div class="contact-box" style="display:flex;align-items:center;justify-content:center;">
+
+        <img src="images/whatsapp1.jpg"
+             alt="Operations"
+             style="max-width:320px;border-radius:18px;box-shadow:0 10px 30px rgba(0,0,0,0.08);">
+
+    </div>
+
+    <div class="contact-box">
+
+        <h2>IT Department</h2>
+
+        <a href="mailto:ithead@theblueradiance.com">
+            ithead@theblueradiance.com
+        </a>
+
+    </div>
+
+    <div class="contact-box">
+
+        <h2>Contact Numbers</h2>
+
+        <p>+966 54 424 5560</p>
+
+        <p>+966 56 812 0210</p>
+
+    </div>
+
+    <div class="contact-box">
+
+        <h2>Head Office</h2>
+
+        <p>
+            Dammam, Eastern Province,<br>
+            Kingdom of Saudi Arabia
+        </p>
+
+        <br>
+
+        <a href="https://www.theblueradiance.com">
+            www.theblueradiance.com
+        </a>
+
+    </div>
+
+</section>
+
+<section class="map-section" style="padding:0 20px 60px;">
+
+    <div style="max-width:1200px;margin:40px auto;">
+
+        <h2 style="text-align:center;color:#003b95;margin-bottom:18px;">
+            Our Location
+        </h2>
+
+        <div style="width:100%;height:0;padding-bottom:56%;position:relative;border-radius:12px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,0.08)">
+
+            <iframe
+                src="https://www.google.com/maps?q=Dammam,+Eastern+Province,+Kingdom+of+Saudi+Arabia&output=embed"
+                style="border:0;position:absolute;top:0;left:0;width:100%;height:100%;">
+            </iframe>
+
         </div>
-    </section>
 
-    <section class="cta">
+    </div>
 
-        <h2>Let’s Work Together</h2>
+</section>
 
-        <p>
-            Our team is available for marine logistics,
-            offshore operational support,
-            vessel coordination,
-            and enterprise solutions.
-        </p>
+<section class="cta">
 
-        <div class="btn-group">
+    <h2>Let’s Work Together</h2>
 
-            <a href="mailto:operations@theblueradiance.com"
-               class="btn btn-primary">
-               Email Operations
-            </a>
+    <p>
+        Our team is available for marine logistics,
+        offshore operational support,
+        vessel coordination,
+        and enterprise solutions.
+    </p>
 
-            <a href="mailto:ithead@theblueradiance.com"
-               class="btn btn-outline">
-               Contact IT Team
-            </a>
+    <div class="btn-group">
 
-        </div>
+        <a href="mailto:operations@theblueradiance.com"
+           class="btn btn-primary">
+           Email Operations
+        </a>
 
-    </section>
+        <a href="mailto:ithead@theblueradiance.com"
+           class="btn btn-outline">
+           Contact IT Team
+        </a>
 
-    <footer>
+        <button class="btn digital-btn"
+                onclick="openCardPopup()">
+            👤 Digital Contact Card
+        </button>
 
-        <p>
-            © 2026 Blue Radiance Marine Company
-        </p>
+    </div>
 
-        <p>
-            Marine • Logistics • Offshore
-        </p>
+</section>
 
-    </footer>
+<div id="cardPopup">
+
+    <div class="popup-content">
+
+        <button class="close-popup"
+                onclick="closeCardPopup()">
+            ×
+        </button>
+
+        <iframe src="sujal.html"></iframe>
+
+    </div>
+
+</div>
+
+<footer>
+
+    <p>
+        ©️ 2026 Blue Radiance Marine Company
+    </p>
+
+    <p>
+        Marine • Logistics • Offshore
+    </p>
+
+</footer>
+
+<script>
+
+function openCardPopup(){
+
+    document.getElementById("cardPopup").style.display="flex";
+}
+
+function closeCardPopup(){
+
+    document.getElementById("cardPopup").style.display="none";
+}
+
+window.onclick=function(event){
+
+    let popup=document.getElementById("cardPopup");
+
+    if(event.target===popup){
+
+        popup.style.display="none";
+    }
+}
+
+</script>
 
 </body>
 
