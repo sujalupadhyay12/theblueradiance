@@ -2,13 +2,31 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Contact - Blue Radiance Marine Company</title>
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="main.css">
-    <link rel="stylesheet" href="animations.css">
+    <meta name="description"
+        content="Contact Blue Radiance Marine Company for marine logistics, offshore support and vessel coordination services across Saudi Arabia.">
+
+    <meta name="keywords"
+        content="Blue Radiance Marine Company, contact, marine logistics, offshore support, Saudi Arabia">
+
+    <title>
+        Contact | Blue Radiance Marine Company
+    </title>
+
+    <link rel="preconnect"
+        href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
 
     <style>
 
@@ -16,293 +34,545 @@
             margin:0;
             padding:0;
             box-sizing:border-box;
+            font-family:'Poppins',sans-serif;
         }
 
         body{
-            font-family:Arial, sans-serif;
-            background:#f5f8ff;
+            background:#f4f7fc;
             color:#222;
+            overflow-x:hidden;
         }
 
+        html{
+            scroll-behavior:smooth;
+        }
+
+        img{
+            max-width:100%;
+            display:block;
+        }
+
+        /* =========================
+           NAVBAR
+        ========================= */
+
         .navbar{
-            background:white;
-            padding:20px 25px;
-            position:sticky;
+
+            position:fixed;
+
             top:0;
-            z-index:1000;
-            box-shadow:0 2px 15px rgba(0,0,0,0.08);
+            left:0;
+
+            width:100%;
+
+            z-index:999;
+
+            padding:18px 6%;
+
+            background:
+            linear-gradient(
+            90deg,
+            #0b1220,
+            #18263f
+            );
         }
 
         .nav-container{
-            max-width:1300px;
-            margin:auto;
+
             display:flex;
             justify-content:space-between;
             align-items:center;
         }
 
         .logo{
-            text-decoration:none;
+
             display:flex;
             align-items:center;
-            gap:10px;
+            gap:14px;
+
+            text-decoration:none;
+            color:white;
         }
 
-        .logo-img{
-            width:48px;
-            height:auto;
-            border-radius:6px;
-            object-fit:contain;
+        .logo img{
+
+            width:58px;
+            height:58px;
+
+            border-radius:50%;
+
+            object-fit:cover;
+
+            background:white;
         }
 
-        .logo-text{
-            font-size:30px;
+        .logo span{
+
+            font-size:1.4rem;
             font-weight:700;
-            color:#003b95;
         }
 
         .nav-menu{
+
             display:flex;
             list-style:none;
             gap:35px;
         }
 
-        .nav-menu li a{
+        .nav-menu a{
+
             text-decoration:none;
-            color:#003b95;
-            font-size:18px;
+            color:white;
             font-weight:600;
             transition:0.3s;
         }
 
-        .nav-menu li a:hover{
-            color:#0077ff;
+        .nav-menu a:hover{
+
+            color:#4da6ff;
         }
 
+        /* =========================
+           HERO SECTION
+        ========================= */
+
         .hero{
-            background:linear-gradient(135deg,#003b95,#009dff);
-            color:white;
+
+            margin-top:95px;
+
+            min-height:65vh;
+
+            background:
+            linear-gradient(
+            rgba(0,0,0,0.55),
+            rgba(0,0,0,0.62)
+            ),
+            url('images/offshore.PNG');
+
+            background-size:cover;
+            background-position:center;
+
+            display:flex;
+            align-items:center;
+            justify-content:center;
+
             text-align:center;
-            padding:120px 20px;
+
+            padding:60px 20px;
+
+            color:white;
+        }
+
+        .hero-content{
+
+            max-width:900px;
+
+            animation:fadeUp 1.2s ease;
         }
 
         .hero h1{
-            font-size:70px;
-            margin-bottom:20px;
+
+            font-size:4.5rem;
+
+            margin-bottom:22px;
+
+            line-height:1.1;
+
+            font-weight:800;
         }
 
         .hero p{
-            font-size:24px;
-            max-width:900px;
-            margin:auto;
-            line-height:1.7;
+
+            font-size:1.2rem;
+
+            line-height:1.9;
+
+            color:rgba(255,255,255,0.9);
         }
 
+        @keyframes fadeUp{
+
+            from{
+                opacity:0;
+                transform:translateY(50px);
+            }
+
+            to{
+                opacity:1;
+                transform:translateY(0);
+            }
+        }
+
+        /* =========================
+           CONTACT SECTION
+        ========================= */
+
         .contact-section{
+
             max-width:1400px;
-            margin:80px auto;
+
+            margin:90px auto;
+
+            padding:0 6%;
+
             display:grid;
-            grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+
+            grid-template-columns:
+            repeat(auto-fit,minmax(320px,1fr));
+
             gap:35px;
-            padding:0 20px;
         }
 
         .contact-box{
+
             background:white;
+
+            border-radius:24px;
+
             padding:40px;
-            border-radius:22px;
-            box-shadow:0 10px 30px rgba(0,0,0,0.08);
+
+            box-shadow:
+            0 12px 35px rgba(0,0,0,0.08);
+
             transition:0.4s;
-            border:2px solid transparent;
         }
 
         .contact-box:hover{
-            transform:translateY(-12px) scale(1.03);
-            border-color:#0077ff;
-            box-shadow:0 20px 40px rgba(0,119,255,0.25);
+
+            transform:translateY(-10px);
+
+            box-shadow:
+            0 18px 45px rgba(0,0,0,0.12);
         }
 
         .contact-box h2{
-            color:#003b95;
+
+            color:#0d1d3b;
+
+            font-size:2rem;
+
             margin-bottom:25px;
-            font-size:32px;
         }
 
         .contact-box p,
         .contact-box a{
-            font-size:20px;
-            line-height:2;
-            text-decoration:none;
-            color:#333;
-        }
 
-        .contact-box a{
-            display:block;
+            font-size:1.02rem;
+
+            line-height:2;
+
+            text-decoration:none;
+
+            color:#444;
         }
 
         .contact-box a:hover{
-            color:#0077ff;
+
+            color:#0066ff;
         }
 
-        .contact-form{
-            padding:30px 32px;
-        }
+        /* =========================
+           FORM
+        ========================= */
 
         .contact-form .form-row{
+
             display:flex;
-            gap:14px;
-            margin-bottom:14px;
+
+            gap:15px;
+
+            margin-bottom:16px;
         }
 
-        .contact-form input[type="text"],
-        .contact-form input[type="email"],
-        .contact-form input[type="tel"],
+        .contact-form input,
         .contact-form select,
         .contact-form textarea{
+
             width:100%;
-            padding:12px 14px;
-            border:1px solid #e3e8ef;
-            border-radius:10px;
-            font-size:16px;
-            color:#223;
-            background:#fff;
+
+            padding:14px 16px;
+
+            border-radius:12px;
+
+            border:1px solid #dfe5ef;
+
+            font-size:15px;
+
+            outline:none;
+
+            transition:0.3s;
+        }
+
+        .contact-form input:focus,
+        .contact-form select:focus,
+        .contact-form textarea:focus{
+
+            border-color:#0066ff;
         }
 
         .contact-form textarea{
+
             resize:vertical;
         }
 
-        .cta{
-            text-align:center;
-            padding:90px 20px;
-        }
-
-        .cta h2{
-            font-size:60px;
-            color:#003b95;
-            margin-bottom:25px;
-        }
-
-        .cta p{
-            font-size:24px;
-            max-width:950px;
-            margin:auto;
-            line-height:1.8;
-            color:#555;
-        }
-
-        .btn-group{
-            margin-top:45px;
-            display:flex;
-            justify-content:center;
-            flex-wrap:wrap;
-            gap:25px;
-        }
+        /* =========================
+           BUTTONS
+        ========================= */
 
         .btn{
-            padding:18px 42px;
-            border-radius:50px;
-            text-decoration:none;
-            font-size:20px;
-            font-weight:bold;
-            transition:0.4s;
+
+            display:inline-block;
+
+            padding:15px 34px;
+
+            border-radius:12px;
+
             border:none;
+
+            text-decoration:none;
+
             cursor:pointer;
+
+            font-weight:600;
+
+            transition:0.3s;
         }
 
         .btn-primary{
+
             background:#0066ff;
+
             color:white;
         }
 
         .btn-primary:hover{
-            background:#004fc7;
+
+            background:#0051cc;
+
             transform:translateY(-5px);
         }
 
         .btn-outline{
+
             border:2px solid #0066ff;
+
             color:#0066ff;
+
             background:white;
         }
 
         .btn-outline:hover{
+
             background:#0066ff;
+
             color:white;
+
             transform:translateY(-5px);
         }
 
         .digital-btn{
-            background:linear-gradient(135deg,#003b95,#009dff);
+
+            background:
+            linear-gradient(
+            135deg,
+            #08111f,
+            #0066ff
+            );
+
             color:white;
-            box-shadow:0 10px 25px rgba(0,119,255,0.35);
         }
 
         .digital-btn:hover{
-            transform:translateY(-5px) scale(1.03);
+
+            transform:translateY(-5px);
         }
 
-        footer{
-            background:linear-gradient(135deg,#003b95,#009dff);
-            color:white;
+        /* =========================
+           IMAGE BOX
+        ========================= */
+
+        .contact-image img{
+
+            width:100%;
+
+            height:100%;
+
+            min-height:320px;
+
+            object-fit:cover;
+
+            border-radius:22px;
+        }
+
+        /* =========================
+           MAP
+        ========================= */
+
+        .map-section{
+
+            padding:0 6% 80px;
+        }
+
+        .map-container{
+
+            max-width:1300px;
+
+            margin:auto;
+        }
+
+        .map-title{
+
             text-align:center;
-            padding:35px 20px;
-            margin-top:80px;
+
+            font-size:2.6rem;
+
+            color:#0d1d3b;
+
+            margin-bottom:25px;
         }
 
-        footer p{
-            font-size:18px;
-            margin:10px 0;
+        .map-frame{
+
+            overflow:hidden;
+
+            border-radius:24px;
+
+            box-shadow:
+            0 12px 35px rgba(0,0,0,0.08);
         }
+
+        .map-frame iframe{
+
+            width:100%;
+
+            height:500px;
+
+            border:none;
+        }
+
+        /* =========================
+           CTA
+        ========================= */
+
+        .cta{
+
+            background:
+            linear-gradient(
+            90deg,
+            #08111f,
+            #10213f
+            );
+
+            color:white;
+
+            text-align:center;
+
+            padding:100px 6%;
+        }
+
+        .cta h2{
+
+            font-size:3.2rem;
+
+            margin-bottom:22px;
+        }
+
+        .cta p{
+
+            max-width:900px;
+
+            margin:auto;
+
+            line-height:1.9;
+
+            color:rgba(255,255,255,0.82);
+
+            margin-bottom:40px;
+        }
+
+        .btn-group{
+
+            display:flex;
+
+            justify-content:center;
+
+            flex-wrap:wrap;
+
+            gap:22px;
+        }
+
+        /* =========================
+           POPUP
+        ========================= */
 
         #cardPopup{
+
             display:none;
+
             position:fixed;
+
             top:0;
             left:0;
+
             width:100%;
             height:100%;
-            background:rgba(0,0,0,0.7);
+
+            background:rgba(0,0,0,0.75);
+
             z-index:99999;
+
             justify-content:center;
             align-items:center;
+
             padding:20px;
         }
 
         .popup-content{
-            background:white;
+
             width:95%;
-            max-width:420px;
-            border-radius:25px;
+            max-width:430px;
+
+            background:white;
+
+            border-radius:24px;
+
             overflow:hidden;
+
             position:relative;
-            box-shadow:0 20px 60px rgba(0,0,0,0.35);
+
             animation:popupShow 0.4s ease;
         }
 
-        .close-popup{
-            position:absolute;
-            top:15px;
-            right:18px;
-            background:none;
-            border:none;
-            font-size:32px;
-            cursor:pointer;
-            z-index:999;
-            color:#333;
-        }
-
         .popup-content iframe{
+
             width:100%;
             height:720px;
             border:none;
+        }
+
+        .close-popup{
+
+            position:absolute;
+
+            top:12px;
+            right:16px;
+
+            background:none;
+
+            border:none;
+
+            font-size:34px;
+
+            cursor:pointer;
+
+            z-index:999;
         }
 
         @keyframes popupShow{
 
             from{
                 opacity:0;
-                transform:scale(0.8);
+                transform:scale(0.85);
             }
 
             to{
@@ -311,40 +581,87 @@
             }
         }
 
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer{
+
+            background:#050b16;
+
+            color:white;
+
+            text-align:center;
+
+            padding:35px 20px;
+        }
+
+        footer p{
+
+            color:rgba(255,255,255,0.75);
+
+            margin:10px 0;
+        }
+
+        /* =========================
+           MOBILE
+        ========================= */
+
         @media(max-width:768px){
 
-            .hero h1{
-                font-size:45px;
-            }
+            .navbar{
 
-            .hero p{
-                font-size:18px;
-            }
-
-            .cta h2{
-                font-size:40px;
+                padding:15px 4%;
             }
 
             .nav-container{
+
                 flex-direction:column;
-                gap:20px;
+
+                gap:18px;
             }
 
             .nav-menu{
+
                 gap:18px;
+
                 flex-wrap:wrap;
+
                 justify-content:center;
             }
 
-            .logo-text{
-                font-size:24px;
+            .logo span{
+
+                font-size:1rem;
+            }
+
+            .hero h1{
+
+                font-size:2.7rem;
+            }
+
+            .hero p{
+
+                font-size:1rem;
             }
 
             .contact-form .form-row{
+
                 flex-direction:column;
             }
 
+            .cta h2{
+
+                font-size:2.2rem;
+            }
+
+            .map-title{
+
+                font-size:2rem;
+            }
+
             .popup-content iframe{
+
                 height:650px;
             }
         }
@@ -355,242 +672,406 @@
 
 <body>
 
-<nav class="navbar">
+    <!-- NAVBAR -->
 
-    <div class="nav-container">
+    <nav class="navbar">
 
-        <a href="index.html" class="logo">
-            <img src="images/Img.PNG" alt="Logo" class="logo-img">
+        <div class="nav-container">
 
-            <span class="logo-text">
-                Blue Radiance Marine Company
-            </span>
-        </a>
+            <a href="index.html"
+                class="logo">
 
-        <ul class="nav-menu">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
+                <img src="images/Img.PNG"
+                    alt="Blue Radiance Logo">
 
-    </div>
+                <span>
+                    Blue Radiance Marine Company
+                </span>
 
-</nav>
+            </a>
 
-<section class="hero">
+            <ul class="nav-menu">
 
-    <h1>Contact Us</h1>
+                <li>
+                    <a href="index.html">
+                        Home
+                    </a>
+                </li>
 
-    <p>
-        Professional marine logistics and offshore support services
-        across Saudi Arabia.
-    </p>
+                <li>
+                    <a href="about.html">
+                        About
+                    </a>
+                </li>
 
-</section>
+                <li>
+                    <a href="services.html">
+                        Services
+                    </a>
+                </li>
 
-<section class="contact-section">
+                <li>
+                    <a href="contact.html">
+                        Contact
+                    </a>
+                </li>
 
-    <div class="contact-form contact-box">
+            </ul>
 
-        <h2>Get in Touch</h2>
+        </div>
 
-        <form>
+    </nav>
 
-            <div class="form-row">
-                <input type="text" placeholder="Full name">
-                <input type="text" placeholder="Company">
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <h1>
+                Contact Blue Radiance Marine Company
+            </h1>
+
+            <p>
+
+                Professional marine logistics, offshore operational support,
+                vessel coordination and technical maritime services
+                across Saudi Arabia.
+
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- CONTACT SECTION -->
+
+    <section class="contact-section">
+
+        <!-- FORM -->
+
+        <div class="contact-box contact-form">
+
+            <h2>
+                Get in Touch
+            </h2>
+
+            <form>
+
+                <div class="form-row">
+
+                    <input type="text"
+                        placeholder="Full Name">
+
+                    <input type="text"
+                        placeholder="Company Name">
+
+                </div>
+
+                <div class="form-row">
+
+                    <input type="email"
+                        placeholder="Email Address">
+
+                    <input type="tel"
+                        placeholder="Phone Number">
+
+                </div>
+
+                <div class="form-row">
+
+                    <select>
+
+                        <option>
+                            Select a Service
+                        </option>
+
+                        <option>
+                            Marine Logistics
+                        </option>
+
+                        <option>
+                            Offshore Support
+                        </option>
+
+                        <option>
+                            Port & Vessel Assistance
+                        </option>
+
+                        <option>
+                            Technical Support
+                        </option>
+
+                    </select>
+
+                </div>
+
+                <div class="form-row">
+
+                    <textarea rows="6"
+                        placeholder="Write your message here..."></textarea>
+
+                </div>
+
+                <div style="text-align:right;">
+
+                    <button type="submit"
+                        class="btn btn-primary">
+
+                        Send Message
+
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+        <!-- OPERATIONS -->
+
+        <div class="contact-box">
+
+            <h2>
+                Operations Email
+            </h2>
+
+            <a href="mailto:operations@theblueradiance.com">
+
+                operations@theblueradiance.com
+
+            </a>
+
+            <br>
+
+            <p>
+
+                Marine logistics, offshore coordination,
+                vessel operations and maritime support inquiries.
+
+            </p>
+
+        </div>
+
+        <!-- IMAGE -->
+
+        <div class="contact-box contact-image">
+
+            <img src="images/offshore.PNG"
+                alt="Marine Operations">
+
+        </div>
+
+        <!-- IT -->
+
+        <div class="contact-box">
+
+            <h2>
+                IT Department
+            </h2>
+
+            <a href="mailto:ithead@theblueradiance.com">
+
+                ithead@theblueradiance.com
+
+            </a>
+
+            <br>
+
+            <p>
+
+                Website support, technical assistance
+                and digital communication inquiries.
+
+            </p>
+
+        </div>
+
+        <!-- CONTACT NUMBERS -->
+
+        <div class="contact-box">
+
+            <h2>
+                Contact Numbers
+            </h2>
+
+            <p>
+                +966 54 424 5560
+            </p>
+
+            <p>
+                +966 56 812 0210
+            </p>
+
+            <br>
+
+            <p>
+
+                Available for marine operations
+                and offshore coordination support.
+
+            </p>
+
+        </div>
+
+        <!-- OFFICE -->
+
+        <div class="contact-box">
+
+            <h2>
+                Head Office
+            </h2>
+
+            <p>
+
+                Dammam, Eastern Province,<br>
+                Kingdom of Saudi Arabia
+
+            </p>
+
+            <br>
+
+            <a href="https://www.theblueradiance.com">
+
+                www.theblueradiance.com
+
+            </a>
+
+        </div>
+
+    </section>
+
+    <!-- MAP -->
+
+    <section class="map-section">
+
+        <div class="map-container">
+
+            <h2 class="map-title">
+
+                Our Location
+
+            </h2>
+
+            <div class="map-frame">
+
+                <iframe
+                    src="https://www.google.com/maps?q=Dammam,+Eastern+Province,+Kingdom+of+Saudi+Arabia&output=embed">
+                </iframe>
+
             </div>
 
-            <div class="form-row">
-                <input type="email" placeholder="Email address">
-                <input type="tel" placeholder="Phone number">
-            </div>
+        </div>
 
-            <div class="form-row">
-                <select>
-                    <option>Select a service</option>
-                    <option>Marine Logistics</option>
-                    <option>Offshore Support</option>
-                    <option>Port Assistance</option>
-                    <option>Equipment Supply</option>
-                </select>
-            </div>
+    </section>
 
-            <div class="form-row">
-                <textarea rows="5" placeholder="Your message"></textarea>
-            </div>
+    <!-- CTA -->
 
-            <div style="text-align:right;">
-                <button type="submit" class="btn btn-primary">
-                    Send Message
-                </button>
-            </div>
+    <section class="cta">
 
-        </form>
+        <h2>
 
-    </div>
+            Let’s Work Together
 
-    <div class="contact-box">
-
-        <h2>Operations Email</h2>
-
-        <a href="mailto:operations@theblueradiance.com">
-            operations@theblueradiance.com
-        </a>
-
-    </div>
-
-    <div class="contact-box" style="display:flex;align-items:center;justify-content:center;">
-
-        <img src="images/whatsapp1.jpg"
-             alt="Operations"
-             style="max-width:320px;border-radius:18px;box-shadow:0 10px 30px rgba(0,0,0,0.08);">
-
-    </div>
-
-    <div class="contact-box">
-
-        <h2>IT Department</h2>
-
-        <a href="mailto:ithead@theblueradiance.com">
-            ithead@theblueradiance.com
-        </a>
-
-    </div>
-
-    <div class="contact-box">
-
-        <h2>Contact Numbers</h2>
-
-        <p>+966 54 424 5560</p>
-
-        <p>+966 56 812 0210</p>
-
-    </div>
-
-    <div class="contact-box">
-
-        <h2>Head Office</h2>
-
-        <p>
-            Dammam, Eastern Province,<br>
-            Kingdom of Saudi Arabia
-        </p>
-
-        <br>
-
-        <a href="https://www.theblueradiance.com">
-            www.theblueradiance.com
-        </a>
-
-    </div>
-
-</section>
-
-<section class="map-section" style="padding:0 20px 60px;">
-
-    <div style="max-width:1200px;margin:40px auto;">
-
-        <h2 style="text-align:center;color:#003b95;margin-bottom:18px;">
-            Our Location
         </h2>
 
-        <div style="width:100%;height:0;padding-bottom:56%;position:relative;border-radius:12px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,0.08)">
+        <p>
 
-            <iframe
-                src="https://www.google.com/maps?q=Dammam,+Eastern+Province,+Kingdom+of+Saudi+Arabia&output=embed"
-                style="border:0;position:absolute;top:0;left:0;width:100%;height:100%;">
-            </iframe>
+            Our team is available for marine logistics,
+            offshore operational support, vessel coordination
+            and technical maritime solutions across Saudi Arabia.
+
+        </p>
+
+        <div class="btn-group">
+
+            <a href="mailto:operations@theblueradiance.com"
+                class="btn btn-primary">
+
+                Email Operations
+
+            </a>
+
+            <a href="mailto:ithead@theblueradiance.com"
+                class="btn btn-outline">
+
+                Contact IT Team
+
+            </a>
+
+            <button class="btn digital-btn"
+                onclick="openCardPopup()">
+
+                👤 Digital Contact Card
+
+            </button>
+
+        </div>
+
+    </section>
+
+    <!-- POPUP -->
+
+    <div id="cardPopup">
+
+        <div class="popup-content">
+
+            <button class="close-popup"
+                onclick="closeCardPopup()">
+
+                ×
+
+            </button>
+
+            <iframe src="./sujal.html"></iframe>
 
         </div>
 
     </div>
 
-</section>
+    <!-- FOOTER -->
 
-<section class="cta">
+    <footer>
 
-    <h2>Let’s Work Together</h2>
+        <p>
 
-    <p>
-        Our team is available for marine logistics,
-        offshore operational support,
-        vessel coordination,
-        and enterprise solutions.
-    </p>
+            © 2026 Blue Radiance Marine Company
 
-    <div class="btn-group">
+        </p>
 
-        <a href="mailto:operations@theblueradiance.com"
-           class="btn btn-primary">
-           Email Operations
-        </a>
+        <p>
 
-        <a href="mailto:ithead@theblueradiance.com"
-           class="btn btn-outline">
-           Contact IT Team
-        </a>
+            Marine • Logistics • Offshore
 
-        <button class="btn digital-btn"
-                onclick="openCardPopup()">
-            👤 Digital Contact Card
-        </button>
+        </p>
 
-    </div>
+    </footer>
 
-</section>
+    <!-- SCRIPT -->
 
-<div id="cardPopup">
+    <script>
 
-    <div class="popup-content">
+        function openCardPopup(){
 
-        <button class="close-popup"
-                onclick="closeCardPopup()">
-            ×
-        </button>
+            document.getElementById("cardPopup").style.display="flex";
+        }
 
-        <iframe src="./sujal.html"></iframe>
+        function closeCardPopup(){
 
-    </div>
+            document.getElementById("cardPopup").style.display="none";
+        }
 
-</div>
+        window.onclick=function(event){
 
-<footer>
+            let popup=document.getElementById("cardPopup");
 
-    <p>
-        ©️ 2026 Blue Radiance Marine Company
-    </p>
+            if(event.target===popup){
 
-    <p>
-        Marine • Logistics • Offshore
-    </p>
+                popup.style.display="none";
+            }
+        }
 
-</footer>
-
-<script>
-
-function openCardPopup(){
-
-    document.getElementById("cardPopup").style.display="flex";
-}
-
-function closeCardPopup(){
-
-    document.getElementById("cardPopup").style.display="none";
-}
-
-window.onclick=function(event){
-
-    let popup=document.getElementById("cardPopup");
-
-    if(event.target===popup){
-
-        popup.style.display="none";
-    }
-}
-
-</script>
+    </script>
 
 </body>
 
