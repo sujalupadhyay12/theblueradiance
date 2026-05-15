@@ -46,6 +46,11 @@
             scroll-behavior:smooth;
         }
 
+        img{
+            max-width:100%;
+            display:block;
+        }
+
         /* =========================
            NAVBAR
         ========================= */
@@ -96,7 +101,7 @@
 
         .logo span{
 
-            font-size:1.5rem;
+            font-size:1.45rem;
             font-weight:700;
         }
 
@@ -121,53 +126,98 @@
         }
 
         /* =========================
-           PAGE HEADER
+           HERO
         ========================= */
 
         .page-header{
 
             margin-top:95px;
 
-            height:75vh;
+            height:78vh;
 
             background:
             linear-gradient(
-            rgba(0,0,0,0.55),
-            rgba(0,0,0,0.55)
+            rgba(0,0,0,0.58),
+            rgba(0,0,0,0.62)
             ),
-            url('images/ship.jpg');
+            url('images/pic.PNG');
 
             background-size:cover;
+
             background-position:center;
 
+            background-repeat:no-repeat;
+
             display:flex;
+
             align-items:center;
+
             justify-content:center;
 
             text-align:center;
+
             color:white;
 
             padding:40px;
+
+            position:relative;
+        }
+
+        .page-header::after{
+
+            content:'';
+
+            position:absolute;
+
+            left:0;
+            bottom:0;
+
+            width:100%;
+            height:120px;
+
+            background:
+            linear-gradient(
+            transparent,
+            rgba(0,0,0,0.15)
+            );
         }
 
         .page-header-content{
 
             max-width:950px;
-            animation:fadeUp 1.3s ease;
+
+            position:relative;
+
+            z-index:2;
+
+            animation:fadeUp 1.2s ease;
         }
 
         .page-header h1{
 
-            font-size:4.3rem;
-            line-height:1.2;
-            margin-bottom:20px;
+            font-size:4.5rem;
+
+            line-height:1.1;
+
+            margin-bottom:24px;
+
             font-weight:800;
+
+            text-shadow:
+            0 8px 25px rgba(0,0,0,0.45);
         }
 
         .page-header p{
 
-            font-size:1.2rem;
-            line-height:1.8;
+            font-size:1.25rem;
+
+            line-height:1.9;
+
+            color:rgba(255,255,255,0.92);
+
+            max-width:850px;
+
+            margin:auto;
         }
 
         @keyframes fadeUp{
@@ -185,66 +235,82 @@
         }
 
         /* =========================
-           MAIN SECTION
+           SERVICES
         ========================= */
 
         .services-wrapper{
 
-            padding:90px 7%;
+            padding:100px 7%;
         }
 
         .service-card{
 
             background:white;
 
-            border-radius:25px;
+            border-radius:28px;
 
             overflow:hidden;
 
-            margin-bottom:70px;
+            margin-bottom:75px;
 
             box-shadow:
-            0 10px 35px rgba(0,0,0,0.08);
+            0 12px 40px rgba(0,0,0,0.08);
+
+            transition:0.4s;
+        }
+
+        .service-card:hover{
+
+            transform:translateY(-8px);
         }
 
         .service-image img{
 
             width:100%;
-            height:420px;
+
+            height:430px;
+
             object-fit:cover;
-            display:block;
         }
 
         .service-content{
 
-            padding:45px;
+            padding:50px;
         }
 
         .service-content h2{
 
-            font-size:2.4rem;
-            margin-bottom:18px;
+            font-size:2.5rem;
+
+            margin-bottom:22px;
+
             color:#0d1d3b;
         }
 
         .service-content p{
 
-            line-height:1.9;
+            line-height:1.95;
+
             color:#555;
-            margin-bottom:22px;
-            font-size:1.03rem;
+
+            margin-bottom:24px;
+
+            font-size:1.04rem;
         }
 
         .service-content ul{
 
-            padding-left:20px;
-            margin-bottom:30px;
+            padding-left:22px;
+
+            margin-bottom:35px;
         }
 
         .service-content li{
 
-            margin-bottom:12px;
-            line-height:1.7;
+            margin-bottom:14px;
+
+            line-height:1.8;
+
             color:#444;
         }
 
@@ -255,9 +321,10 @@
             text-decoration:none;
 
             background:#0066ff;
+
             color:white;
 
-            padding:15px 34px;
+            padding:16px 36px;
 
             border-radius:12px;
 
@@ -269,6 +336,7 @@
         .service-btn:hover{
 
             transform:translateY(-5px);
+
             background:#0051cc;
         }
 
@@ -304,25 +372,31 @@
             #10213f
             );
 
-            padding:90px 7%;
+            padding:100px 7%;
 
             text-align:center;
+
             color:white;
         }
 
         .cta h2{
 
-            font-size:3rem;
-            margin-bottom:20px;
+            font-size:3.2rem;
+
+            margin-bottom:22px;
         }
 
         .cta p{
 
             max-width:850px;
+
             margin:auto;
+
             line-height:1.9;
-            margin-bottom:35px;
-            color:rgba(255,255,255,0.82);
+
+            margin-bottom:38px;
+
+            color:rgba(255,255,255,0.84);
         }
 
         /* =========================
@@ -332,6 +406,7 @@
         footer{
 
             background:#050b16;
+
             color:white;
 
             text-align:center;
@@ -352,7 +427,7 @@
 
             .page-header h1{
 
-                font-size:3rem;
+                font-size:3.2rem;
             }
 
         }
@@ -376,12 +451,12 @@
 
             .page-header{
 
-                height:65vh;
+                height:68vh;
             }
 
             .page-header h1{
 
-                font-size:2.3rem;
+                font-size:2.4rem;
             }
 
             .page-header p{
@@ -396,17 +471,17 @@
 
             .service-content{
 
-                padding:28px;
+                padding:30px;
             }
 
             .service-content h2{
 
-                font-size:1.8rem;
+                font-size:1.9rem;
             }
 
             .cta h2{
 
-                font-size:2rem;
+                font-size:2.2rem;
             }
 
         }
@@ -423,12 +498,16 @@
 
         <div class="nav-container">
 
-            <a href="index.html" class="logo">
+            <a href="index.html"
+                class="logo">
 
-                <img src="images/Img.PNG" alt="Blue Radiance Logo">
+                <img src="images/Img.PNG"
+                    alt="Blue Radiance Logo">
 
                 <span>
+
                     Blue Radiance Marine Company
+
                 </span>
 
             </a>
@@ -500,7 +579,8 @@
 
             <div class="service-image">
 
-                <img src="images/ship.jpg" alt="Marine Logistics">
+                <img src="images/pic.PNG"
+                    alt="Marine Logistics">
 
             </div>
 
@@ -512,27 +592,32 @@
 
                 <p>
 
-                    Blue Radiance Marine Company provides reliable marine logistics
-                    and shipping coordination services for offshore and commercial
-                    marine operations across Saudi Arabia.
+                    Blue Radiance Marine Company provides reliable
+                    marine logistics and shipping coordination
+                    services supporting offshore operations,
+                    maritime cargo handling and vessel movement
+                    planning across Saudi Arabia.
 
                 </p>
 
                 <ul>
 
-                    <li>✓ Cargo handling and transportation</li>
+                    <li>✓ Cargo transportation and handling support</li>
 
-                    <li>✓ Marine supply chain coordination</li>
+                    <li>✓ Marine logistics coordination</li>
 
-                    <li>✓ Vessel movement planning</li>
+                    <li>✓ Offshore supply chain support</li>
 
-                    <li>✓ Offshore logistics management</li>
+                    <li>✓ Vessel scheduling and movement planning</li>
 
-                    <li>✓ Marine operational support</li>
+                    <li>✓ Port cargo supervision services</li>
+
+                    <li>✓ Marine operational assistance</li>
 
                 </ul>
 
-                <a href="contact.html" class="service-btn">
+                <a href="contact.html"
+                    class="service-btn">
 
                     Request Service
 
@@ -548,7 +633,8 @@
 
             <div class="service-image">
 
-                <img src="images/whatsapp2.jpg" alt="Offshore Support">
+                <img src="images/whatsapp2.jpg"
+                    alt="Offshore Support">
 
             </div>
 
@@ -560,9 +646,11 @@
 
                 <p>
 
-                    Our offshore support division delivers operational assistance,
-                    marine workforce support and offshore coordination solutions
-                    for maritime projects and industrial offshore operations.
+                    Our offshore support division delivers
+                    professional operational assistance,
+                    offshore workforce coordination and
+                    vessel support solutions for industrial
+                    marine operations.
 
                 </p>
 
@@ -578,9 +666,12 @@
 
                     <li>✓ Offshore operational management</li>
 
+                    <li>✓ Offshore project support services</li>
+
                 </ul>
 
-                <a href="contact.html" class="service-btn">
+                <a href="contact.html"
+                    class="service-btn">
 
                     Request Service
 
@@ -602,8 +693,10 @@
 
                 <p>
 
-                    Blue Radiance Marine Company ensures smooth vessel movement,
-                    docking operations and complete maritime coordination support.
+                    Blue Radiance Marine Company ensures smooth
+                    vessel movement, docking operations and
+                    complete maritime coordination support
+                    for commercial and offshore activities.
 
                 </p>
 
@@ -617,11 +710,14 @@
 
                     <li>✓ Cargo supervision services</li>
 
-                    <li>✓ Marine documentation support</li>
+                    <li>✓ Maritime documentation support</li>
+
+                    <li>✓ Port operational coordination</li>
 
                 </ul>
 
-                <a href="contact.html" class="service-btn">
+                <a href="contact.html"
+                    class="service-btn">
 
                     Request Service
 
@@ -644,8 +740,9 @@
                 <p>
 
                     We provide advanced marine technical assistance,
-                    equipment support and industrial maritime solutions
-                    for offshore businesses and marine industries.
+                    equipment support and industrial maritime
+                    operational solutions for offshore businesses
+                    and marine industries.
 
                 </p>
 
@@ -661,9 +758,12 @@
 
                     <li>✓ Technical operational guidance</li>
 
+                    <li>✓ Marine systems coordination</li>
+
                 </ul>
 
-                <a href="contact.html" class="service-btn">
+                <a href="contact.html"
+                    class="service-btn">
 
                     Request Service
 
@@ -687,13 +787,15 @@
 
         <p>
 
-            Blue Radiance Marine Company is ready to support your
-            offshore operations, marine logistics and technical
-            maritime requirements with professional expertise.
+            Blue Radiance Marine Company is ready to support
+            your offshore operations, marine logistics and
+            technical maritime requirements with reliable
+            and professional maritime solutions.
 
         </p>
 
-        <a href="contact.html" class="service-btn">
+        <a href="contact.html"
+            class="service-btn">
 
             Contact Us Today
 
