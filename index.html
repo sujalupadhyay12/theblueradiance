@@ -1,25 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="description" content="Blue Radiance Marine Company - Premium Marine & Offshore Services in Saudi Arabia">
+    <meta name="description"
+        content="Blue Radiance Marine Company - Premium Marine & Offshore Services in Saudi Arabia">
 
-    <meta name="keywords" content="marine services, offshore, shipping, logistics, Saudi Arabia">
+    <meta name="keywords"
+        content="marine services, offshore, shipping, logistics, Saudi Arabia">
 
-    <meta name="author" content="Blue Radiance Marine Company">
+    <meta name="author"
+        content="Blue Radiance Marine Company">
 
     <title>
         Blue Radiance Marine Company | Marine & Offshore Services
     </title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect"
+        href="https://fonts.googleapis.com">
 
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
 
     <style>
 
@@ -30,13 +39,14 @@
             font-family:'Poppins',sans-serif;
         }
 
-        body{
-            background:#fff;
-            overflow-x:hidden;
-        }
-
         html{
             scroll-behavior:smooth;
+        }
+
+        body{
+            background:#f5f7fb;
+            overflow-x:hidden;
+            color:#222;
         }
 
         /* =========================
@@ -44,84 +54,144 @@
         ========================= */
 
         .navbar{
+
             width:100%;
+
             position:fixed;
+
             top:0;
             left:0;
+
             z-index:999;
-            padding:18px 8%;
-            background:rgba(0,0,0,0.45);
+
+            padding:18px 7%;
+
+            background:
+            rgba(8,16,32,0.82);
+
             backdrop-filter:blur(10px);
         }
 
         .nav-container{
+
             display:flex;
+
             align-items:center;
+
             justify-content:space-between;
         }
 
         .logo{
-            color:#fff;
+
+            display:flex;
+
+            align-items:center;
+
+            gap:14px;
+
             text-decoration:none;
-            font-size:1.4rem;
+
+            color:white;
+        }
+
+        .logo img{
+
+            width:58px;
+            height:58px;
+
+            border-radius:50%;
+
+            object-fit:cover;
+
+            background:white;
+        }
+
+        .logo span{
+
+            font-size:1.45rem;
+
             font-weight:700;
         }
 
         .nav-menu{
+
             display:flex;
+
             gap:35px;
+
             list-style:none;
         }
 
         .nav-menu a{
-            color:#fff;
+
+            color:white;
+
             text-decoration:none;
-            font-weight:500;
+
+            font-weight:600;
+
             transition:0.3s;
         }
 
         .nav-menu a:hover{
+
             color:#4da6ff;
         }
 
         /* =========================
-           HERO SECTION
+           HERO
         ========================= */
 
         .hero{
+
             width:100%;
+
             min-height:100vh;
 
             background:
             linear-gradient(
-            rgba(0,0,0,0.45),
-            rgba(0,0,0,0.55)
+            rgba(0,0,0,0.58),
+            rgba(0,0,0,0.62)
             ),
             url('images/ship.jpg');
 
             background-size:cover;
+
             background-position:center;
+
             background-repeat:no-repeat;
 
             display:flex;
+
             align-items:center;
+
             justify-content:center;
 
+            text-align:center;
+
+            padding:120px 20px;
+
             position:relative;
+
             overflow:hidden;
         }
 
-        /* Floating Animation */
-
         .hero::before{
-            content:'';
-            position:absolute;
-            width:200%;
-            height:200%;
-            background:
-            radial-gradient(rgba(255,255,255,0.08), transparent);
 
-            animation:moveBg 12s linear infinite;
+            content:'';
+
+            position:absolute;
+
+            width:220%;
+            height:220%;
+
+            background:
+            radial-gradient(
+            rgba(255,255,255,0.08),
+            transparent
+            );
+
+            animation:moveBg 14s linear infinite;
         }
 
         @keyframes moveBg{
@@ -141,111 +211,23 @@
         }
 
         .hero-content{
+
             position:relative;
+
             z-index:2;
-            text-align:center;
-            color:white;
-            max-width:1000px;
-            padding:120px 20px;
-            animation:fadeUp 1.4s ease;
-        }
 
-        .hero-title{
-            font-size:4.5rem;
-            line-height:1.2;
-            margin-bottom:25px;
-            font-weight:800;
+            max-width:1100px;
 
-            text-shadow:
-            0 5px 25px rgba(0,0,0,0.5);
-        }
-
-        .hero-subtitle{
-            font-size:1.25rem;
-            line-height:1.9;
-            margin-bottom:40px;
-            color:rgba(255,255,255,0.92);
-        }
-
-        /* Tags */
-
-        .hero-tags{
-            display:flex;
-            justify-content:center;
-            flex-wrap:wrap;
-            gap:18px;
-            margin-bottom:50px;
-        }
-
-        .hero-tags span{
-            padding:12px 24px;
-            border-radius:50px;
-
-            background:rgba(255,255,255,0.12);
-
-            border:1px solid rgba(255,255,255,0.35);
-
-            backdrop-filter:blur(10px);
-
-            font-size:0.95rem;
-
-            transition:0.3s;
-        }
-
-        .hero-tags span:hover{
-            transform:translateY(-5px);
-            background:rgba(255,255,255,0.2);
-        }
-
-        /* Buttons */
-
-        .hero-buttons{
-            display:flex;
-            justify-content:center;
-            flex-wrap:wrap;
-            gap:20px;
-        }
-
-        .btn{
-            text-decoration:none;
-            padding:16px 36px;
-            border-radius:12px;
-            font-weight:600;
-            transition:0.3s;
-        }
-
-        .btn-primary{
-            background:#0066ff;
             color:white;
 
-            box-shadow:
-            0 10px 30px rgba(0,102,255,0.35);
+            animation:fadeUp 1.2s ease;
         }
-
-        .btn-primary:hover{
-            transform:translateY(-5px);
-            background:#0052cc;
-        }
-
-        .btn-secondary{
-            border:2px solid rgba(255,255,255,0.7);
-            color:white;
-            background:rgba(255,255,255,0.05);
-        }
-
-        .btn-secondary:hover{
-            background:white;
-            color:black;
-            transform:translateY(-5px);
-        }
-
-        /* Animation */
 
         @keyframes fadeUp{
 
             from{
                 opacity:0;
-                transform:translateY(60px);
+                transform:translateY(50px);
             }
 
             to{
@@ -255,40 +237,182 @@
 
         }
 
+        .hero-title{
+
+            font-size:4.7rem;
+
+            line-height:1.15;
+
+            margin-bottom:25px;
+
+            font-weight:800;
+
+            text-shadow:
+            0 6px 25px rgba(0,0,0,0.5);
+        }
+
+        .hero-subtitle{
+
+            font-size:1.2rem;
+
+            line-height:2;
+
+            color:rgba(255,255,255,0.92);
+
+            margin-bottom:40px;
+        }
+
+        .hero-tags{
+
+            display:flex;
+
+            justify-content:center;
+
+            flex-wrap:wrap;
+
+            gap:18px;
+
+            margin-bottom:50px;
+        }
+
+        .hero-tags span{
+
+            padding:13px 25px;
+
+            border-radius:50px;
+
+            background:
+            rgba(255,255,255,0.12);
+
+            border:
+            1px solid rgba(255,255,255,0.3);
+
+            backdrop-filter:blur(8px);
+
+            transition:0.3s;
+        }
+
+        .hero-tags span:hover{
+
+            transform:translateY(-5px);
+        }
+
+        .hero-buttons{
+
+            display:flex;
+
+            justify-content:center;
+
+            gap:22px;
+
+            flex-wrap:wrap;
+        }
+
+        .btn{
+
+            text-decoration:none;
+
+            padding:16px 38px;
+
+            border-radius:12px;
+
+            font-weight:600;
+
+            transition:0.3s;
+        }
+
+        .btn-primary{
+
+            background:#0066ff;
+
+            color:white;
+
+            box-shadow:
+            0 10px 30px rgba(0,102,255,0.4);
+        }
+
+        .btn-primary:hover{
+
+            transform:translateY(-5px);
+
+            background:#0052cc;
+        }
+
+        .btn-secondary{
+
+            border:2px solid rgba(255,255,255,0.7);
+
+            color:white;
+
+            background:
+            rgba(255,255,255,0.05);
+        }
+
+        .btn-secondary:hover{
+
+            background:white;
+
+            color:black;
+
+            transform:translateY(-5px);
+        }
+
         /* =========================
-           CAPABILITIES SECTION
+           SECTION
         ========================= */
 
         .section{
+
             padding:100px 8%;
         }
 
         .section-title{
+
             text-align:center;
+
             font-size:3rem;
-            margin-bottom:15px;
+
             color:#0b1c39;
+
+            margin-bottom:18px;
         }
 
         .section-subtitle{
+
             text-align:center;
-            color:#666;
-            max-width:800px;
+
+            max-width:850px;
+
             margin:auto;
-            line-height:1.8;
+
+            color:#666;
+
+            line-height:1.9;
+
             margin-bottom:60px;
         }
 
+        /* =========================
+           CARDS
+        ========================= */
+
         .cards{
+
             display:grid;
-            grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-            gap:30px;
+
+            grid-template-columns:
+            repeat(auto-fit,minmax(280px,1fr));
+
+            gap:32px;
         }
 
         .card{
+
             background:white;
-            padding:40px 30px;
-            border-radius:20px;
+
+            padding:42px 32px;
+
+            border-radius:22px;
 
             box-shadow:
             0 10px 30px rgba(0,0,0,0.08);
@@ -297,42 +421,165 @@
         }
 
         .card:hover{
+
             transform:translateY(-10px);
         }
 
         .card-icon{
+
             font-size:3rem;
+
             margin-bottom:20px;
         }
 
         .card h3{
+
             margin-bottom:15px;
+
             color:#0b1c39;
+
+            font-size:1.5rem;
         }
 
         .card p{
+
             color:#666;
-            line-height:1.8;
+
+            line-height:1.9;
         }
 
         /* =========================
-           CTA SECTION
+           ABOUT SECTION
+        ========================= */
+
+        .about-section{
+
+            padding:100px 8%;
+
+            background:white;
+        }
+
+        .about-container{
+
+            display:grid;
+
+            grid-template-columns:
+            repeat(auto-fit,minmax(350px,1fr));
+
+            gap:50px;
+
+            align-items:center;
+        }
+
+        .about-image img{
+
+            width:100%;
+
+            border-radius:25px;
+
+            box-shadow:
+            0 10px 35px rgba(0,0,0,0.12);
+        }
+
+        .about-text h2{
+
+            font-size:3rem;
+
+            margin-bottom:25px;
+
+            color:#0b1c39;
+        }
+
+        .about-text p{
+
+            line-height:2;
+
+            color:#555;
+
+            margin-bottom:20px;
+        }
+
+        /* =========================
+           STATS
+        ========================= */
+
+        .stats{
+
+            padding:90px 8%;
+
+            background:
+            linear-gradient(
+            135deg,
+            #081426,
+            #11284f
+            );
+
+            color:white;
+        }
+
+        .stats-grid{
+
+            display:grid;
+
+            grid-template-columns:
+            repeat(auto-fit,minmax(220px,1fr));
+
+            gap:30px;
+
+            text-align:center;
+        }
+
+        .stat-box{
+
+            padding:35px 20px;
+        }
+
+        .stat-box h3{
+
+            font-size:3rem;
+
+            margin-bottom:10px;
+
+            color:#4da6ff;
+        }
+
+        .stat-box p{
+
+            color:rgba(255,255,255,0.82);
+        }
+
+        /* =========================
+           CTA
         ========================= */
 
         .cta{
+
             padding:100px 8%;
-            background:#081426;
+
             text-align:center;
+
+            background:#081426;
+
             color:white;
         }
 
         .cta h2{
+
             font-size:3rem;
+
             margin-bottom:20px;
         }
 
         .cta p{
-            color:rgba(255,255,255,0.8);
+
+            color:rgba(255,255,255,0.82);
+
+            max-width:850px;
+
+            margin:auto;
+
+            line-height:1.9;
+
             margin-bottom:35px;
         }
 
@@ -341,24 +588,29 @@
         ========================= */
 
         footer{
+
             background:#050d18;
+
             color:white;
-            padding:40px 8%;
+
+            padding:45px 8%;
+
             text-align:center;
         }
 
         footer p{
-            color:rgba(255,255,255,0.7);
+
+            color:rgba(255,255,255,0.72);
         }
 
         /* =========================
-           MOBILE RESPONSIVE
+           MOBILE
         ========================= */
 
         @media(max-width:992px){
 
             .hero-title{
-                font-size:3.2rem;
+                font-size:3.4rem;
             }
 
         }
@@ -366,7 +618,11 @@
         @media(max-width:768px){
 
             .navbar{
-                padding:18px 5%;
+                padding:16px 5%;
+            }
+
+            .logo span{
+                font-size:1rem;
             }
 
             .nav-menu{
@@ -374,7 +630,7 @@
             }
 
             .hero-title{
-                font-size:2.3rem;
+                font-size:2.4rem;
             }
 
             .hero-subtitle{
@@ -395,6 +651,14 @@
                 font-size:2.2rem;
             }
 
+            .about-text h2{
+                font-size:2.2rem;
+            }
+
+            .cta h2{
+                font-size:2.2rem;
+            }
+
         }
 
     </style>
@@ -409,8 +673,16 @@
 
         <div class="nav-container">
 
-            <a href="index.html" class="logo">
-                Blue Radiance Marine
+            <a href="index.html"
+                class="logo">
+
+                <img src="images/Img.PNG"
+                    alt="Blue Radiance Logo">
+
+                <span>
+                    Blue Radiance Marine Company
+                </span>
+
             </a>
 
             <ul class="nav-menu">
@@ -445,7 +717,7 @@
 
     </nav>
 
-    <!-- HERO SECTION -->
+    <!-- HERO -->
 
     <section class="hero">
 
@@ -461,8 +733,9 @@
 
             <p class="hero-subtitle">
 
-                Premium maritime solutions trusted across Saudi Arabia with offshore support,
-                vessel assistance and marine logistics.
+                Blue Radiance Marine Company delivers premium maritime,
+                offshore and logistics solutions across Saudi Arabia with
+                professionalism, operational excellence and industry expertise.
 
             </p>
 
@@ -480,16 +753,26 @@
                     Port Assistance
                 </span>
 
+                <span>
+                    Technical Solutions
+                </span>
+
             </div>
 
             <div class="hero-buttons">
 
-                <a href="services.html" class="btn btn-primary">
+                <a href="services.html"
+                    class="btn btn-primary">
+
                     Explore Services
+
                 </a>
 
-                <a href="contact.html" class="btn btn-secondary">
+                <a href="contact.html"
+                    class="btn btn-secondary">
+
                     Get In Touch
+
                 </a>
 
             </div>
@@ -503,13 +786,16 @@
     <section class="section">
 
         <h2 class="section-title">
-            Our Capabilities
+
+            Our Marine Capabilities
+
         </h2>
 
         <p class="section-subtitle">
 
-            Integrated maritime services built around safety,
-            reliability and operational excellence.
+            We provide integrated maritime and offshore solutions designed
+            to support modern marine operations with efficiency, reliability,
+            safety and international operational standards.
 
         </p>
 
@@ -526,8 +812,11 @@
                 </h3>
 
                 <p>
-                    End-to-end cargo handling, shipping coordination
-                    and logistics support across Saudi ports.
+
+                    Complete marine logistics support including cargo
+                    transportation, vessel coordination and offshore
+                    operational planning across Saudi Arabian ports.
+
                 </p>
 
             </div>
@@ -543,8 +832,11 @@
                 </h3>
 
                 <p>
-                    Reliable offshore operational support,
-                    vessel coordination and personnel transfer.
+
+                    Reliable offshore support services including crew
+                    assistance, operational management and marine
+                    coordination for offshore activities.
+
                 </p>
 
             </div>
@@ -560,8 +852,122 @@
                 </h3>
 
                 <p>
-                    Advanced marine equipment support,
-                    maintenance and operational solutions.
+
+                    Advanced technical and marine equipment support
+                    solutions designed for modern maritime and
+                    offshore industries.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ABOUT -->
+
+    <section class="about-section">
+
+        <div class="about-container">
+
+            <div class="about-image">
+
+                <img src="images/whatsapp1.jpg"
+                    alt="Marine Operations">
+
+            </div>
+
+            <div class="about-text">
+
+                <h2>
+
+                    About Blue Radiance Marine Company
+
+                </h2>
+
+                <p>
+
+                    Blue Radiance Marine Company is a professional maritime
+                    solutions provider based in Saudi Arabia offering
+                    offshore support, marine logistics, vessel coordination
+                    and industrial marine assistance.
+
+                </p>
+
+                <p>
+
+                    Our experienced team focuses on delivering reliable,
+                    efficient and safety-oriented marine services tailored
+                    to meet modern offshore and maritime operational demands.
+
+                </p>
+
+                <p>
+
+                    With a strong commitment to professionalism and customer
+                    satisfaction, we continue to support marine businesses
+                    with trusted operational excellence and innovative
+                    maritime solutions.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- STATS -->
+
+    <section class="stats">
+
+        <div class="stats-grid">
+
+            <div class="stat-box">
+
+                <h3>
+                    24/7
+                </h3>
+
+                <p>
+                    Offshore Operational Support
+                </p>
+
+            </div>
+
+            <div class="stat-box">
+
+                <h3>
+                    15+
+                </h3>
+
+                <p>
+                    Years Industry Experience
+                </p>
+
+            </div>
+
+            <div class="stat-box">
+
+                <h3>
+                    100%
+                </h3>
+
+                <p>
+                    Commitment To Safety
+                </p>
+
+            </div>
+
+            <div class="stat-box">
+
+                <h3>
+                    KSA
+                </h3>
+
+                <p>
+                    Saudi Arabia Operations
                 </p>
 
             </div>
@@ -575,15 +981,24 @@
     <section class="cta">
 
         <h2>
+
             Ready To Partner With Us?
+
         </h2>
 
         <p>
-            Contact our marine experts today for offshore and logistics solutions.
+
+            Contact Blue Radiance Marine Company today for reliable
+            offshore support, marine logistics and professional
+            maritime operational solutions.
+
         </p>
 
-        <a href="contact.html" class="btn btn-primary">
+        <a href="contact.html"
+            class="btn btn-primary">
+
             Contact Now
+
         </a>
 
     </section>
@@ -593,10 +1008,14 @@
     <footer>
 
         <p>
-            © 2026 Blue Radiance Marine Company. All Rights Reserved.
+
+            © 2026 Blue Radiance Marine Company.
+            All Rights Reserved.
+
         </p>
 
     </footer>
 
 </body>
+
 </html>
