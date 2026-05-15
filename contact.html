@@ -11,9 +11,6 @@
     <meta name="description"
         content="Contact Blue Radiance Marine Company for marine logistics, offshore support and vessel coordination services across Saudi Arabia.">
 
-    <meta name="keywords"
-        content="Blue Radiance Marine Company, contact, marine logistics, offshore support, Saudi Arabia">
-
     <title>
         Contact | Blue Radiance Marine Company
     </title>
@@ -52,19 +49,12 @@
             display:block;
         }
 
-        /* =========================
-           NAVBAR
-        ========================= */
-
         .navbar{
 
             position:fixed;
-
             top:0;
             left:0;
-
             width:100%;
-
             z-index:999;
 
             padding:18px 6%;
@@ -100,9 +90,7 @@
             height:58px;
 
             border-radius:50%;
-
             object-fit:cover;
-
             background:white;
         }
 
@@ -131,10 +119,6 @@
 
             color:#4da6ff;
         }
-
-        /* =========================
-           HERO SECTION
-        ========================= */
 
         .hero{
 
@@ -166,13 +150,11 @@
         .hero-content{
 
             max-width:900px;
-
-            animation:fadeUp 1.2s ease;
         }
 
         .hero h1{
 
-            font-size:4.5rem;
+            font-size:4.2rem;
 
             margin-bottom:22px;
 
@@ -189,23 +171,6 @@
 
             color:rgba(255,255,255,0.9);
         }
-
-        @keyframes fadeUp{
-
-            from{
-                opacity:0;
-                transform:translateY(50px);
-            }
-
-            to{
-                opacity:1;
-                transform:translateY(0);
-            }
-        }
-
-        /* =========================
-           CONTACT SECTION
-        ========================= */
 
         .contact-section{
 
@@ -271,10 +236,6 @@
             color:#0066ff;
         }
 
-        /* =========================
-           FORM
-        ========================= */
-
         .contact-form .form-row{
 
             display:flex;
@@ -315,10 +276,6 @@
             resize:vertical;
         }
 
-        /* =========================
-           BUTTONS
-        ========================= */
-
         .btn{
 
             display:inline-block;
@@ -341,14 +298,12 @@
         .btn-primary{
 
             background:#0066ff;
-
             color:white;
         }
 
         .btn-primary:hover{
 
             background:#0051cc;
-
             transform:translateY(-5px);
         }
 
@@ -387,10 +342,6 @@
             transform:translateY(-5px);
         }
 
-        /* =========================
-           IMAGE BOX
-        ========================= */
-
         .contact-image img{
 
             width:100%;
@@ -404,10 +355,6 @@
             border-radius:22px;
         }
 
-        /* =========================
-           MAP
-        ========================= */
-
         .map-section{
 
             padding:0 6% 80px;
@@ -416,7 +363,6 @@
         .map-container{
 
             max-width:1300px;
-
             margin:auto;
         }
 
@@ -449,10 +395,6 @@
 
             border:none;
         }
-
-        /* =========================
-           CTA
-        ========================= */
 
         .cta{
 
@@ -501,10 +443,6 @@
             gap:22px;
         }
 
-        /* =========================
-           POPUP
-        ========================= */
-
         #cardPopup{
 
             display:none;
@@ -539,8 +477,6 @@
             overflow:hidden;
 
             position:relative;
-
-            animation:popupShow 0.4s ease;
         }
 
         .popup-content iframe{
@@ -568,23 +504,6 @@
             z-index:999;
         }
 
-        @keyframes popupShow{
-
-            from{
-                opacity:0;
-                transform:scale(0.85);
-            }
-
-            to{
-                opacity:1;
-                transform:scale(1);
-            }
-        }
-
-        /* =========================
-           FOOTER
-        ========================= */
-
         footer{
 
             background:#050b16;
@@ -603,10 +522,6 @@
             margin:10px 0;
         }
 
-        /* =========================
-           MOBILE
-        ========================= */
-
         @media(max-width:768px){
 
             .navbar{
@@ -617,7 +532,6 @@
             .nav-container{
 
                 flex-direction:column;
-
                 gap:18px;
             }
 
@@ -637,7 +551,7 @@
 
             .hero h1{
 
-                font-size:2.7rem;
+                font-size:2.5rem;
             }
 
             .hero p{
@@ -672,8 +586,6 @@
 
 <body>
 
-    <!-- NAVBAR -->
-
     <nav class="navbar">
 
         <div class="nav-container">
@@ -693,27 +605,19 @@
             <ul class="nav-menu">
 
                 <li>
-                    <a href="index.html">
-                        Home
-                    </a>
+                    <a href="index.html">Home</a>
                 </li>
 
                 <li>
-                    <a href="about.html">
-                        About
-                    </a>
+                    <a href="about.html">About</a>
                 </li>
 
                 <li>
-                    <a href="services.html">
-                        Services
-                    </a>
+                    <a href="services.html">Services</a>
                 </li>
 
                 <li>
-                    <a href="contact.html">
-                        Contact
-                    </a>
+                    <a href="contact.html">Contact</a>
                 </li>
 
             </ul>
@@ -721,8 +625,6 @@
         </div>
 
     </nav>
-
-    <!-- HERO -->
 
     <section class="hero">
 
@@ -744,8 +646,6 @@
 
     </section>
 
-    <!-- CONTACT SECTION -->
-
     <section class="contact-section">
 
         <!-- FORM -->
@@ -756,14 +656,26 @@
                 Get in Touch
             </h2>
 
-            <form>
+            <form action="https://formsubmit.co/hrmanager@theblueraidance.com"
+                method="POST">
+
+                <input type="hidden"
+                    name="_captcha"
+                    value="false">
+
+                <input type="hidden"
+                    name="_next"
+                    value="https://theblueradiance.com/contact.html">
 
                 <div class="form-row">
 
                     <input type="text"
-                        placeholder="Full Name">
+                        name="Full Name"
+                        placeholder="Full Name"
+                        required>
 
                     <input type="text"
+                        name="Company Name"
                         placeholder="Company Name">
 
                 </div>
@@ -771,18 +683,23 @@
                 <div class="form-row">
 
                     <input type="email"
-                        placeholder="Email Address">
+                        name="Email"
+                        placeholder="Email Address"
+                        required>
 
                     <input type="tel"
-                        placeholder="Phone Number">
+                        name="Phone Number"
+                        placeholder="Phone Number"
+                        required>
 
                 </div>
 
                 <div class="form-row">
 
-                    <select>
+                    <select name="Service"
+                        required>
 
-                        <option>
+                        <option value="">
                             Select a Service
                         </option>
 
@@ -809,7 +726,9 @@
                 <div class="form-row">
 
                     <textarea rows="6"
-                        placeholder="Write your message here..."></textarea>
+                        name="Message"
+                        placeholder="Write your message here..."
+                        required></textarea>
 
                 </div>
 
@@ -836,9 +755,10 @@
                 Operations Email
             </h2>
 
-            <a href="mailto:operations@theblueradiance.com">
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=hrmanager@theblueraidance.com"
+                target="_blank">
 
-                operations@theblueradiance.com
+                hrmanager@theblueraidance.com
 
             </a>
 
@@ -870,7 +790,8 @@
                 IT Department
             </h2>
 
-            <a href="mailto:ithead@theblueradiance.com">
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=ithead@theblueradiance.com"
+                target="_blank">
 
                 ithead@theblueradiance.com
 
@@ -887,7 +808,7 @@
 
         </div>
 
-        <!-- CONTACT NUMBERS -->
+        <!-- NUMBERS -->
 
         <div class="contact-box">
 
@@ -901,15 +822,6 @@
 
             <p>
                 +966 56 812 0210
-            </p>
-
-            <br>
-
-            <p>
-
-                Available for marine operations
-                and offshore coordination support.
-
             </p>
 
         </div>
@@ -941,8 +853,6 @@
 
     </section>
 
-    <!-- MAP -->
-
     <section class="map-section">
 
         <div class="map-container">
@@ -965,8 +875,6 @@
 
     </section>
 
-    <!-- CTA -->
-
     <section class="cta">
 
         <h2>
@@ -985,14 +893,16 @@
 
         <div class="btn-group">
 
-            <a href="mailto:operations@theblueradiance.com"
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=hrmanager@theblueraidance.com"
+                target="_blank"
                 class="btn btn-primary">
 
                 Email Operations
 
             </a>
 
-            <a href="mailto:ithead@theblueradiance.com"
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=ithead@theblueradiance.com"
+                target="_blank"
                 class="btn btn-outline">
 
                 Contact IT Team
@@ -1009,8 +919,6 @@
         </div>
 
     </section>
-
-    <!-- POPUP -->
 
     <div id="cardPopup">
 
@@ -1029,8 +937,6 @@
 
     </div>
 
-    <!-- FOOTER -->
-
     <footer>
 
         <p>
@@ -1046,8 +952,6 @@
         </p>
 
     </footer>
-
-    <!-- SCRIPT -->
 
     <script>
 
