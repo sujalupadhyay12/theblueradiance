@@ -7,7 +7,6 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function initializeApp() {
-    handleLoader();
     initializeNavigation();
     initializeStatistics();
     initializeFormHandler();
@@ -19,22 +18,6 @@ function initializeApp() {
 // LOADER FUNCTIONALITY
 // ====================================
 
-function handleLoader() {
-    const loader = document.getElementById('loader');
-    if (loader) {
-        window.addEventListener('load', function() {
-            setTimeout(() => {
-                loader.classList.add('loaded');
-            }, 500);
-        });
-
-        setTimeout(() => {
-            if (!loader.classList.contains('loaded')) {
-                loader.classList.add('loaded');
-            }
-        }, 3000);
-    }
-}
 
 // ====================================
 // NAVIGATION FUNCTIONALITY
