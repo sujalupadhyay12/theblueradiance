@@ -122,12 +122,54 @@
             text-decoration:none;
             font-weight:600;
             transition:0.3s;
+            position:relative;
 
         }
 
         .nav-menu a:hover{
 
             color:#3eb8ff;
+
+        }
+
+        /* Active state styles */
+        .nav-menu a.active{
+
+            color:#0099ff;
+            font-weight:700;
+
+        }
+
+        .nav-menu a.active::after{
+
+            content:'';
+            position:absolute;
+            bottom:-8px;
+            left:0;
+            right:0;
+            height:3px;
+            background:linear-gradient(90deg, #0099ff, #00d4ff);
+            border-radius:2px;
+            box-shadow:0 0 12px rgba(0, 153, 255, 0.6);
+            animation:glowUnderline 0.6s ease-out;
+
+        }
+
+        @keyframes glowUnderline{
+
+            from{
+
+                width:0;
+                left:50%;
+
+            }
+
+            to{
+
+                width:100%;
+                left:0;
+
+            }
 
         }
 
@@ -538,6 +580,13 @@
 
             }
 
+            .nav-menu a.active::after{
+
+                bottom:-5px;
+                height:2px;
+
+            }
+
             .hero{
 
                 padding-top:170px;
@@ -599,7 +648,7 @@
             <ul class="nav-menu">
 
                 <li>
-                    <a href="index.html">
+                    <a href="index.html" class="active">
                         Home
                     </a>
                 </li>
