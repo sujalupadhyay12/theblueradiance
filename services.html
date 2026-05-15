@@ -8,13 +8,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <meta name="description"
-        content="Blue Radiance Marine Company - Marine Logistics, Offshore Support, Port Assistance and Technical Marine Solutions in Saudi Arabia">
+        content="Blue Radiance Marine Company - Marine Logistics, Offshore Support, Port Assistance and Technical Marine Solutions">
 
     <meta name="keywords"
-        content="Marine logistics, offshore support, marine company Saudi Arabia, vessel support, port assistance">
+        content="marine logistics, offshore support, vessel assistance, Saudi Arabia, marine company">
+
+    <meta name="robots" content="index, follow">
 
     <title>
-        Blue Radiance Marine Company | Marine & Offshore Services
+        Services | Blue Radiance Marine Company
     </title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -34,19 +36,14 @@
             font-family:'Poppins',sans-serif;
         }
 
+        body{
+            background:#f5f7fb;
+            overflow-x:hidden;
+            color:#222;
+        }
+
         html{
             scroll-behavior:smooth;
-        }
-
-        body{
-            background:#ffffff;
-            overflow-x:hidden;
-            color:#111;
-        }
-
-        img{
-            max-width:100%;
-            display:block;
         }
 
         /* =========================
@@ -55,18 +52,20 @@
 
         .navbar{
 
-            width:100%;
             position:fixed;
             top:0;
             left:0;
+            width:100%;
             z-index:999;
 
-            padding:18px 7%;
+            background:
+            linear-gradient(
+            90deg,
+            #0b1220,
+            #18263f
+            );
 
-            background:rgba(0,0,0,0.65);
-
-            backdrop-filter:blur(10px);
-
+            padding:18px 6%;
         }
 
         .nav-container{
@@ -74,7 +73,6 @@
             display:flex;
             align-items:center;
             justify-content:space-between;
-
         }
 
         .logo{
@@ -83,58 +81,54 @@
             align-items:center;
             gap:14px;
 
-            color:#fff;
             text-decoration:none;
-            font-weight:700;
-            font-size:1.2rem;
-
+            color:white;
         }
 
         .logo img{
 
-            width:65px;
-            height:65px;
-
+            width:58px;
+            height:58px;
             border-radius:50%;
-
             object-fit:cover;
-
             background:white;
-            padding:4px;
+        }
 
+        .logo span{
+
+            font-size:1.5rem;
+            font-weight:700;
         }
 
         .nav-menu{
 
             display:flex;
-            list-style:none;
             gap:35px;
-
+            list-style:none;
         }
 
         .nav-menu a{
 
-            color:#fff;
             text-decoration:none;
-            font-weight:500;
+            color:white;
+            font-weight:600;
             transition:0.3s;
-
         }
 
         .nav-menu a:hover{
 
-            color:#3ea6ff;
-
+            color:#4da6ff;
         }
 
         /* =========================
-           HERO SECTION
+           PAGE HEADER
         ========================= */
 
-        .hero{
+        .page-header{
 
-            width:100%;
-            min-height:100vh;
+            margin-top:95px;
+
+            height:75vh;
 
             background:
             linear-gradient(
@@ -144,146 +138,36 @@
             url('images/ship.jpg');
 
             background-size:cover;
-            background-position:center center;
-            background-repeat:no-repeat;
+            background-position:center;
 
             display:flex;
             align-items:center;
             justify-content:center;
 
             text-align:center;
-
-            position:relative;
-
-            overflow:hidden;
-
-        }
-
-        .hero::before{
-
-            content:'';
-
-            position:absolute;
-
-            width:200%;
-            height:200%;
-
-            background:
-            radial-gradient(rgba(255,255,255,0.05), transparent);
-
-            animation:moveBg 10s linear infinite;
-
-        }
-
-        @keyframes moveBg{
-
-            0%{
-                transform:translate(-5%,-5%);
-            }
-
-            50%{
-                transform:translate(5%,5%);
-            }
-
-            100%{
-                transform:translate(-5%,-5%);
-            }
-
-        }
-
-        .hero-content{
-
-            position:relative;
-            z-index:2;
-
-            max-width:1000px;
-
-            padding:120px 20px;
-
-            animation:fadeUp 1.2s ease;
-
-        }
-
-        .hero h1{
-
             color:white;
 
-            font-size:5rem;
-
-            line-height:1.1;
-
-            margin-bottom:25px;
-
-            font-weight:800;
-
-            text-shadow:0 5px 20px rgba(0,0,0,0.5);
-
+            padding:40px;
         }
 
-        .hero p{
+        .page-header-content{
 
-            color:rgba(255,255,255,0.92);
+            max-width:950px;
+            animation:fadeUp 1.3s ease;
+        }
+
+        .page-header h1{
+
+            font-size:4.3rem;
+            line-height:1.2;
+            margin-bottom:20px;
+            font-weight:800;
+        }
+
+        .page-header p{
 
             font-size:1.2rem;
-
-            line-height:1.9;
-
-            margin-bottom:40px;
-
-        }
-
-        .hero-buttons{
-
-            display:flex;
-            justify-content:center;
-            gap:20px;
-            flex-wrap:wrap;
-
-        }
-
-        .btn{
-
-            padding:16px 36px;
-
-            border-radius:10px;
-
-            text-decoration:none;
-
-            font-weight:600;
-
-            transition:0.3s;
-
-        }
-
-        .btn-primary{
-
-            background:#0066ff;
-            color:white;
-
-            box-shadow:
-            0 10px 30px rgba(0,102,255,0.4);
-
-        }
-
-        .btn-primary:hover{
-
-            transform:translateY(-5px);
-
-        }
-
-        .btn-outline{
-
-            border:2px solid rgba(255,255,255,0.7);
-
-            color:white;
-
-        }
-
-        .btn-outline:hover{
-
-            background:white;
-            color:black;
-
+            line-height:1.8;
         }
 
         @keyframes fadeUp{
@@ -301,189 +185,110 @@
         }
 
         /* =========================
-           SECTION
+           MAIN SECTION
         ========================= */
 
-        .section{
+        .services-wrapper{
 
-            padding:100px 8%;
-
+            padding:90px 7%;
         }
-
-        .section-title{
-
-            text-align:center;
-
-            font-size:3rem;
-
-            margin-bottom:20px;
-
-            color:#081b33;
-
-        }
-
-        .section-subtitle{
-
-            text-align:center;
-
-            color:#666;
-
-            max-width:900px;
-
-            margin:auto;
-
-            line-height:1.9;
-
-            margin-bottom:70px;
-
-        }
-
-        /* =========================
-           SERVICE CARD
-        ========================= */
 
         .service-card{
 
-            display:grid;
+            background:white;
 
-            grid-template-columns:1fr 1fr;
+            border-radius:25px;
 
-            gap:60px;
+            overflow:hidden;
 
-            align-items:center;
+            margin-bottom:70px;
 
-            margin-bottom:120px;
-
-        }
-
-        .service-card.reverse{
-
-            direction:rtl;
-
-        }
-
-        .service-card.reverse .service-text{
-
-            direction:ltr;
-
+            box-shadow:
+            0 10px 35px rgba(0,0,0,0.08);
         }
 
         .service-image img{
 
             width:100%;
-
-            border-radius:25px;
-
-            box-shadow:
-            0 15px 40px rgba(0,0,0,0.15);
-
-            transition:0.4s;
-
+            height:420px;
+            object-fit:cover;
+            display:block;
         }
 
-        .service-image img:hover{
+        .service-content{
 
-            transform:scale(1.03);
-
+            padding:45px;
         }
 
-        .service-text h2{
+        .service-content h2{
 
-            font-size:2.5rem;
-
-            margin-bottom:25px;
-
-            color:#081b33;
-
+            font-size:2.4rem;
+            margin-bottom:18px;
+            color:#0d1d3b;
         }
 
-        .service-text p{
+        .service-content p{
 
+            line-height:1.9;
             color:#555;
-
-            line-height:2;
-
-            margin-bottom:25px;
-
+            margin-bottom:22px;
+            font-size:1.03rem;
         }
 
-        .service-list{
+        .service-content ul{
 
+            padding-left:20px;
             margin-bottom:30px;
-
         }
 
-        .service-list li{
+        .service-content li{
 
-            margin-bottom:14px;
-
+            margin-bottom:12px;
+            line-height:1.7;
             color:#444;
+        }
 
-            line-height:1.8;
+        .service-btn{
 
+            display:inline-block;
+
+            text-decoration:none;
+
+            background:#0066ff;
+            color:white;
+
+            padding:15px 34px;
+
+            border-radius:12px;
+
+            font-weight:600;
+
+            transition:0.3s;
+        }
+
+        .service-btn:hover{
+
+            transform:translateY(-5px);
+            background:#0051cc;
         }
 
         /* =========================
-           WHY US
+           NO IMAGE SECTION
         ========================= */
 
-        .why-us{
+        .no-image-section{
 
-            background:#f5f8fc;
-
+            background:
+            linear-gradient(
+            135deg,
+            #ffffff,
+            #f2f6ff
+            );
         }
 
-        .features{
+        .full-width{
 
-            display:grid;
-
-            grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-
-            gap:30px;
-
-        }
-
-        .feature{
-
-            background:white;
-
-            padding:40px 30px;
-
-            border-radius:20px;
-
-            box-shadow:
-            0 10px 30px rgba(0,0,0,0.08);
-
-            transition:0.3s;
-
-        }
-
-        .feature:hover{
-
-            transform:translateY(-10px);
-
-        }
-
-        .feature h3{
-
-            margin:20px 0;
-
-            color:#081b33;
-
-        }
-
-        .feature p{
-
-            color:#666;
-
-            line-height:1.8;
-
-        }
-
-        .icon{
-
-            font-size:3rem;
-
+            width:100%;
         }
 
         /* =========================
@@ -492,36 +297,32 @@
 
         .cta{
 
-            padding:100px 8%;
+            background:
+            linear-gradient(
+            90deg,
+            #08111f,
+            #10213f
+            );
 
-            background:#081426;
+            padding:90px 7%;
 
             text-align:center;
-
             color:white;
-
         }
 
         .cta h2{
 
             font-size:3rem;
-
             margin-bottom:20px;
-
         }
 
         .cta p{
 
-            color:rgba(255,255,255,0.85);
-
-            max-width:800px;
-
+            max-width:850px;
             margin:auto;
-
-            margin-bottom:35px;
-
             line-height:1.9;
-
+            margin-bottom:35px;
+            color:rgba(255,255,255,0.82);
         }
 
         /* =========================
@@ -530,78 +331,82 @@
 
         footer{
 
-            background:#050d18;
-
+            background:#050b16;
             color:white;
 
             text-align:center;
 
-            padding:40px 20px;
-
+            padding:35px 20px;
         }
 
         footer p{
 
-            color:rgba(255,255,255,0.7);
-
+            color:rgba(255,255,255,0.72);
         }
 
         /* =========================
-           MOBILE
+           RESPONSIVE
         ========================= */
 
         @media(max-width:992px){
 
-            .hero h1{
+            .page-header h1{
 
-                font-size:3.5rem;
-
-            }
-
-            .service-card{
-
-                grid-template-columns:1fr;
-
+                font-size:3rem;
             }
 
         }
 
         @media(max-width:768px){
 
-            .hero h1{
+            .navbar{
 
-                font-size:2.5rem;
-
-            }
-
-            .hero p{
-
-                font-size:1rem;
-
-            }
-
-            .nav-menu{
-
-                gap:15px;
-
+                padding:15px 4%;
             }
 
             .logo span{
 
-                font-size:0.95rem;
-
+                font-size:1rem;
             }
 
-            .section-title{
+            .nav-menu{
 
-                font-size:2.2rem;
-
+                gap:18px;
             }
 
-            .service-text h2{
+            .page-header{
+
+                height:65vh;
+            }
+
+            .page-header h1{
+
+                font-size:2.3rem;
+            }
+
+            .page-header p{
+
+                font-size:1rem;
+            }
+
+            .service-image img{
+
+                height:260px;
+            }
+
+            .service-content{
+
+                padding:28px;
+            }
+
+            .service-content h2{
+
+                font-size:1.8rem;
+            }
+
+            .cta h2{
 
                 font-size:2rem;
-
             }
 
         }
@@ -620,7 +425,7 @@
 
             <a href="index.html" class="logo">
 
-                <img src="images/Img.PNG" alt="Logo">
+                <img src="images/Img.PNG" alt="Blue Radiance Logo">
 
                 <span>
                     Blue Radiance Marine Company
@@ -630,13 +435,29 @@
 
             <ul class="nav-menu">
 
-                <li><a href="index.html">Home</a></li>
+                <li>
+                    <a href="index.html">
+                        Home
+                    </a>
+                </li>
 
-                <li><a href="about.html">About</a></li>
+                <li>
+                    <a href="about.html">
+                        About
+                    </a>
+                </li>
 
-                <li><a href="services.html">Services</a></li>
+                <li>
+                    <a href="services.html">
+                        Services
+                    </a>
+                </li>
 
-                <li><a href="contact.html">Contact</a></li>
+                <li>
+                    <a href="contact.html">
+                        Contact
+                    </a>
+                </li>
 
             </ul>
 
@@ -646,36 +467,24 @@
 
     <!-- HERO -->
 
-    <section class="hero">
+    <section class="page-header">
 
-        <div class="hero-content">
+        <div class="page-header-content">
 
             <h1>
 
                 Marine & Offshore
-                Operational Excellence
+                Services
 
             </h1>
 
             <p>
 
-                Blue Radiance Marine Company delivers advanced maritime logistics,
-                offshore operational support, vessel coordination and technical marine
-                solutions across Saudi Arabia with reliability, professionalism and safety.
+                Professional marine logistics, offshore support,
+                vessel assistance and technical maritime solutions
+                across Saudi Arabia.
 
             </p>
-
-            <div class="hero-buttons">
-
-                <a href="#services" class="btn btn-primary">
-                    Explore Services
-                </a>
-
-                <a href="contact.html" class="btn btn-outline">
-                    Contact Us
-                </a>
-
-            </div>
 
         </div>
 
@@ -683,68 +492,59 @@
 
     <!-- SERVICES -->
 
-    <section class="section" id="services">
+    <section class="services-wrapper">
 
-        <h2 class="section-title">
-            Our Professional Services
-        </h2>
+        <!-- MARINE LOGISTICS -->
 
-        <p class="section-subtitle">
-
-            We provide comprehensive maritime and offshore operational services
-            designed to support logistics, offshore industries and marine transportation
-            with world-class operational standards.
-
-        </p>
-
-        <!-- SERVICE 1 -->
-
-        <div class="service-card">
+        <section class="service-card">
 
             <div class="service-image">
 
-                <img src="images/whatsapp1.jpg" alt="Marine Logistics">
+                <img src="images/ship.jpg" alt="Marine Logistics">
 
             </div>
 
-            <div class="service-text">
+            <div class="service-content">
 
                 <h2>
-                    Marine Logistics
+                    🚢 Marine Logistics
                 </h2>
 
                 <p>
 
-                    Blue Radiance Marine Company provides professional marine logistics
-                    services including cargo coordination, port operations and vessel movement support.
+                    Blue Radiance Marine Company provides reliable marine logistics
+                    and shipping coordination services for offshore and commercial
+                    marine operations across Saudi Arabia.
 
                 </p>
 
-                <ul class="service-list">
+                <ul>
 
-                    <li>✔ Cargo Transportation Coordination</li>
+                    <li>✓ Cargo handling and transportation</li>
 
-                    <li>✔ Port Logistics Management</li>
+                    <li>✓ Marine supply chain coordination</li>
 
-                    <li>✔ Shipping Documentation</li>
+                    <li>✓ Vessel movement planning</li>
 
-                    <li>✔ Vessel Scheduling Support</li>
+                    <li>✓ Offshore logistics management</li>
 
-                    <li>✔ Supply Chain Coordination</li>
+                    <li>✓ Marine operational support</li>
 
                 </ul>
 
-                <a href="contact.html" class="btn btn-primary">
+                <a href="contact.html" class="service-btn">
+
                     Request Service
+
                 </a>
 
             </div>
 
-        </div>
+        </section>
 
-        <!-- SERVICE 2 -->
+        <!-- OFFSHORE SUPPORT -->
 
-        <div class="service-card reverse">
+        <section class="service-card">
 
             <div class="service-image">
 
@@ -752,170 +552,126 @@
 
             </div>
 
-            <div class="service-text">
+            <div class="service-content">
 
                 <h2>
-                    Offshore Support
+                    ⚓ Offshore Support Services
                 </h2>
 
                 <p>
 
-                    Our offshore operational support services are designed for
-                    offshore industries requiring safe, efficient and reliable marine assistance.
+                    Our offshore support division delivers operational assistance,
+                    marine workforce support and offshore coordination solutions
+                    for maritime projects and industrial offshore operations.
 
                 </p>
 
-                <ul class="service-list">
+                <ul>
 
-                    <li>✔ Offshore Crew Transfer</li>
+                    <li>✓ Offshore crew transportation</li>
 
-                    <li>✔ Offshore Operational Assistance</li>
+                    <li>✓ Emergency offshore support</li>
 
-                    <li>✔ Equipment Transportation</li>
+                    <li>✓ Offshore vessel coordination</li>
 
-                    <li>✔ Emergency Response Coordination</li>
+                    <li>✓ Marine workforce logistics</li>
 
-                    <li>✔ Offshore Safety Support</li>
+                    <li>✓ Offshore operational management</li>
 
                 </ul>
 
-                <a href="contact.html" class="btn btn-primary">
+                <a href="contact.html" class="service-btn">
+
                     Request Service
+
                 </a>
 
             </div>
 
-        </div>
+        </section>
 
-        <!-- SERVICE 3 -->
+        <!-- PORT & VESSEL ASSISTANCE -->
 
-        <div class="service-card">
+        <section class="service-card no-image-section">
 
-            <div class="service-image">
-
-                <img src="images/whatsapp3.jpg" alt="Port Assistance">
-
-            </div>
-
-            <div class="service-text">
+            <div class="service-content full-width">
 
                 <h2>
-                    Port & Vessel Assistance
+                    🛳️ Port & Vessel Assistance
                 </h2>
 
                 <p>
 
-                    We provide complete vessel coordination and port operational
-                    support services for efficient maritime movement and reduced operational delays.
+                    Blue Radiance Marine Company ensures smooth vessel movement,
+                    docking operations and complete maritime coordination support.
 
                 </p>
 
-                <ul class="service-list">
+                <ul>
 
-                    <li>✔ Vessel Coordination</li>
+                    <li>✓ Docking and berth coordination</li>
 
-                    <li>✔ Berthing Assistance</li>
+                    <li>✓ Vessel movement assistance</li>
 
-                    <li>✔ Port Clearance Support</li>
+                    <li>✓ Port authority coordination</li>
 
-                    <li>✔ Maritime Documentation</li>
+                    <li>✓ Cargo supervision services</li>
 
-                    <li>✔ Marine Operational Planning</li>
+                    <li>✓ Marine documentation support</li>
 
                 </ul>
 
-                <a href="contact.html" class="btn btn-primary">
+                <a href="contact.html" class="service-btn">
+
                     Request Service
+
                 </a>
 
             </div>
 
-        </div>
+        </section>
 
-    </section>
+        <!-- TECHNICAL SUPPORT -->
 
-    <!-- WHY US -->
+        <section class="service-card no-image-section">
 
-    <section class="section why-us">
+            <div class="service-content full-width">
 
-        <h2 class="section-title">
-            Why Choose Us
-        </h2>
-
-        <p class="section-subtitle">
-
-            Blue Radiance Marine Company is committed to professionalism,
-            operational excellence and advanced maritime solutions.
-
-        </p>
-
-        <div class="features">
-
-            <div class="feature">
-
-                <div class="icon">⚓</div>
-
-                <h3>
-                    Maritime Expertise
-                </h3>
+                <h2>
+                    ⚙️ Technical & Equipment Support
+                </h2>
 
                 <p>
 
-                    Extensive industry experience in marine logistics and offshore operations.
+                    We provide advanced marine technical assistance,
+                    equipment support and industrial maritime solutions
+                    for offshore businesses and marine industries.
 
                 </p>
 
-            </div>
+                <ul>
 
-            <div class="feature">
+                    <li>✓ Marine equipment supply</li>
 
-                <div class="icon">🛡️</div>
+                    <li>✓ Offshore technical assistance</li>
 
-                <h3>
-                    Safety Standards
-                </h3>
+                    <li>✓ Industrial marine support</li>
 
-                <p>
+                    <li>✓ Equipment troubleshooting</li>
 
-                    International-level safety procedures and operational compliance systems.
+                    <li>✓ Technical operational guidance</li>
 
-                </p>
+                </ul>
 
-            </div>
+                <a href="contact.html" class="service-btn">
 
-            <div class="feature">
+                    Request Service
 
-                <div class="icon">🌍</div>
-
-                <h3>
-                    Saudi Operations
-                </h3>
-
-                <p>
-
-                    Deep operational knowledge of Saudi Arabian marine sectors and logistics systems.
-
-                </p>
+                </a>
 
             </div>
 
-            <div class="feature">
-
-                <div class="icon">⚙️</div>
-
-                <h3>
-                    Technical Support
-                </h3>
-
-                <p>
-
-                    Professional support teams available for operational and offshore requirements.
-
-                </p>
-
-            </div>
-
-        </div>
+        </section>
 
     </section>
 
@@ -925,18 +681,19 @@
 
         <h2>
 
-            Trusted Maritime Solutions Across Saudi Arabia
+            Need Professional Marine Services?
 
         </h2>
 
         <p>
 
-            Partner with Blue Radiance Marine Company for efficient offshore support,
-            marine logistics and vessel coordination services tailored for modern maritime industries.
+            Blue Radiance Marine Company is ready to support your
+            offshore operations, marine logistics and technical
+            maritime requirements with professional expertise.
 
         </p>
 
-        <a href="contact.html" class="btn btn-primary">
+        <a href="contact.html" class="service-btn">
 
             Contact Us Today
 
