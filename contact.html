@@ -885,10 +885,6 @@
             </h2>
 
             <p>
-                +966 54 424 5560
-            </p>
-
-            <p>
                 +966 56 812 0210
             </p>
 
@@ -999,4 +995,45 @@
 
             </button>
 
-            <iframe src="./sujal.html"></iframe>
+        </div>
+
+    </div>
+
+    <footer>
+
+        <p>
+            © 2025 Blue Radiance Marine Company. All rights reserved.
+        </p>
+
+        <p>
+            Dammam, Eastern Province, Kingdom of Saudi Arabia
+        </p>
+
+    </footer>
+
+    <script>
+
+        function openCardPopup(){
+            document.getElementById('cardPopup').style.display='flex';
+        }
+
+        function closeCardPopup(){
+            document.getElementById('cardPopup').style.display='none';
+        }
+
+        document.addEventListener('DOMContentLoaded', function(){
+            const currentPath = window.location.pathname;
+            const navLinks = document.querySelectorAll('.nav-menu a');
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if(link.getAttribute('href') === currentPath.split('/').pop() || (currentPath === '/' && link.getAttribute('href') === 'index.html')){
+                    link.classList.add('active');
+                }
+            });
+        });
+
+    </script>
+
+</body>
+
+</html>
