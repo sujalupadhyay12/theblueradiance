@@ -12,6 +12,7 @@ function initializeApp() {
     initializeFormHandler();
     handleScrollEffects();
     detectNavbarScroll();
+    initializeContactCardPopup();
 }
 
 // ====================================
@@ -232,5 +233,72 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+// ====================================
+// DIGITAL CONTACT CARD FUNCTIONS
+// ====================================
+
+function openCardPopup() {
+    const popup = document.getElementById('cardPopup');
+    const popupContent = document.querySelector('.popup-content');
+    
+    // Create or update the vCard download link
+    const vcardData = generateVCard();
+    const vcardBlob = new Blob([vcardData], { type: 'text/vcard' });
+    const vcardUrl = URL.createObjectURL(vcardBlob);
+    
+    // Add download button to popup
+    popupContent.innerHTML = `
+        <button class="close-popup" onclick="closeCardPopup()">×</button>
+        <div style="padding: 40px; text-align: center;">
+            <h3 style="color: #0d1d3b; margin-bottom: 20px; font-size: 1.5rem;">Digital Contact Card</h3>
+            <p style="color: #555; margin-bottom: 25px; line-height: 1.6;">
+                <strong>Name:</strong> Sujal Upadhyay<br>
+                <strong>Position:</strong> IT Head<br>
+                <strong>Company:</strong> Blue Radiance Marine Company<br>
+                <strong>Email:</strong> ithead@theblueradiance.com<br>
+                <strong>Website:</strong> https://theblueradiance.com
+            </p>
+            <a href="${vcardUrl}" download="Sujal_Upadhyay.vcf" 
+                style="display: inline-block; padding: 12px 28px; background: #0066ff; color: white; 
+                text-decoration: none; border-radius: 8px; font-weight: 600; cursor: pointer; transition: 0.3s;"
+                onmouseover="this.style.background='#0051cc'"
+                onmouseout="this.style.background='#0066ff'">
+                📥 Download vCard
+            </a>
+        </div>
+    `;
+    
+    popup.style.display = 'flex';
+}
+
+function closeCardPopup() {
+    const popup = document.getElementById('cardPopup');
+    popup.style.display = 'none';
+}
+
+function generateVCard() {
+    const vcard = `BEGIN:VCARD
+VERSION:3.0
+FN:Sujal Upadhyay
+N:Upadhyay;Sujal;;;
+TITLE:IT Head
+ORG:Blue Radiance Marine Company
+EMAIL:ithead@theblueradiance.com
+URL:https://theblueradiance.com
+END:VCARD`;
+    return vcard;
+}
+
+function initializeContactCardPopup() {
+    const cardPopup = document.getElementById('cardPopup');
+    if (cardPopup) {
+        cardPopup.addEventListener('click', function(e) {
+            if (e.target === cardPopup) {
+                closeCardPopup();
+            }
+        });
+    }
+}
 
 console.log('The Blue Radiance website loaded successfully!');
