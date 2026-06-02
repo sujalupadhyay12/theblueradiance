@@ -823,10 +823,9 @@
                 Operations Email
             </h2>
 
-            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=hrmanager@theblueraidance.com"
-                target="_blank">
+            <a href="mailto:operations@theblueradiance.com?subject=Business%20Inquiry">
 
-                hrmanager@theblueraidance.com
+                operations@theblueradiance.com
 
             </a>
 
@@ -858,8 +857,7 @@
                 IT Department
             </h2>
 
-            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=ithead@theblueradiance.com"
-                target="_blank">
+            <a href="mailto:ithead@theblueradiance.com?subject=IT%20Support%20Request">
 
                 ithead@theblueradiance.com
 
@@ -957,16 +955,14 @@
 
         <div class="btn-group">
 
-            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=hrmanager@theblueraidance.com"
-                target="_blank"
+            <a href="mailto:operations@theblueradiance.com?subject=Business%20Inquiry"
                 class="btn btn-primary">
 
                 Email Operations
 
             </a>
 
-            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=ithead@theblueradiance.com"
-                target="_blank"
+            <a href="mailto:ithead@theblueradiance.com?subject=IT%20Support%20Request"
                 class="btn btn-outline">
 
                 Contact IT Team
@@ -1002,37 +998,12 @@
     <footer>
 
         <p>
-            © 2025 Blue Radiance Marine Company. All rights reserved.
-        </p>
-
-        <p>
-            Dammam, Eastern Province, Kingdom of Saudi Arabia
+            &copy; 2024 Blue Radiance Marine Company. All rights reserved.
         </p>
 
     </footer>
 
-    <script>
-
-        function openCardPopup(){
-            document.getElementById('cardPopup').style.display='flex';
-        }
-
-        function closeCardPopup(){
-            document.getElementById('cardPopup').style.display='none';
-        }
-
-        document.addEventListener('DOMContentLoaded', function(){
-            const currentPath = window.location.pathname;
-            const navLinks = document.querySelectorAll('.nav-menu a');
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if(link.getAttribute('href') === currentPath.split('/').pop() || (currentPath === '/' && link.getAttribute('href') === 'index.html')){
-                    link.classList.add('active');
-                }
-            });
-        });
-
-    </script>
+    <script src="main.js"></script>
 
 </body>
 
