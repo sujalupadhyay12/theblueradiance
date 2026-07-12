@@ -79,9 +79,11 @@
         }
 
         .contact-box:hover { transform: translateY(-10px); box-shadow: 0 18px 45px rgba(0, 0, 0, 0.12); }
-        .contact-box h2 { color: #0d1d3b; font-size: 2rem; margin-bottom: 25px; }
-        .contact-box p, .contact-box a { font-size: 1.02rem; line-height: 2; text-decoration: none; color: #444; }
-        .contact-box a:hover { color: #0066ff; }
+        .contact-box h2 { color: #0d1d3b; font-size: 1.7rem; margin-bottom: 18px; line-height: 1.3; }
+        .contact-box p, .contact-box a { font-size: 1.02rem; line-height: 1.9; text-decoration: none; color: #444; }
+        .contact-box a { color: #0066ff; font-weight: 500; word-break: break-word; }
+        .contact-box a:hover { color: #0051cc; text-decoration: underline; }
+        .contact-box .email-link { display: inline-block; margin-bottom: 12px; }
 
         .contact-form .form-row { display: flex; gap: 15px; margin-bottom: 16px; }
 
@@ -90,11 +92,12 @@
         .contact-form textarea {
             width: 100%; padding: 14px 16px; border-radius: 12px;
             border: 1px solid #dfe5ef; font-size: 15px; outline: none; transition: 0.3s;
+            color: #222; background: white;
         }
 
         .contact-form input:focus,
         .contact-form select:focus,
-        .contact-form textarea:focus { border-color: #0066ff; }
+        .contact-form textarea:focus { border-color: #0066ff; box-shadow: 0 0 0 3px rgba(0, 102, 255, 0.1); }
 
         .contact-form textarea { resize: vertical; }
 
@@ -111,11 +114,12 @@
             display: inline-flex; align-items: center; justify-content: center;
             min-width: 250px; padding: 15px 34px; border-radius: 12px;
             border: none; text-decoration: none; cursor: pointer;
-            font-weight: 600; line-height: 1.3; transition: 0.3s;
+            font-weight: 600; line-height: 1.3; transition: 0.3s; font-size: 1rem;
         }
 
         .btn-primary { background: #0066ff; color: white; }
         .btn-primary:hover { background: #0051cc; transform: translateY(-5px); }
+        .btn-primary:disabled { background: #9db8e0; cursor: default; transform: none; }
         .btn-outline { border: 2px solid #0066ff; color: #0066ff; background: white; }
         .btn-outline:hover { background: #0066ff; color: white; transform: translateY(-5px); }
 
@@ -126,8 +130,38 @@
         .map-section { padding: 0 6% 80px; }
         .map-container { max-width: 1300px; margin: auto; }
         .map-title { text-align: center; font-size: 2.6rem; color: #0d1d3b; margin-bottom: 25px; }
-        .map-frame { overflow: hidden; border-radius: 24px; box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08); }
-        .map-frame iframe { width: 100%; height: 500px; border: none; }
+
+        .location-card {
+            background: white; border-radius: 16px; padding: 28px 32px;
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08);
+            max-width: 760px; margin: 0 auto 25px; text-align: left; line-height: 1.9;
+        }
+
+        .location-card strong { color: #0d1d3b; font-size: 1.1rem; }
+
+        .map-frame {
+            position: relative; overflow: hidden; border-radius: 24px;
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08);
+        }
+
+        .map-frame iframe { width: 100%; height: 500px; border: none; display: block; }
+
+        .map-overlay-buttons {
+            position: absolute; bottom: 18px; right: 18px;
+            display: flex; gap: 10px; z-index: 5;
+        }
+
+        .map-btn {
+            display: inline-flex; align-items: center; gap: 7px;
+            padding: 9px 16px; border-radius: 50px;
+            font-size: 0.85rem; font-weight: 600; text-decoration: none;
+            background: rgba(255, 255, 255, 0.95); color: #0d1d3b;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
+            backdrop-filter: blur(6px); transition: 0.3s;
+        }
+
+        .map-btn:hover { background: #0066ff; color: white; transform: translateY(-3px); }
+        .map-btn svg { width: 15px; height: 15px; flex-shrink: 0; }
 
         .cta {
             background: linear-gradient(90deg, #08111f, #10213f);
@@ -139,7 +173,7 @@
         .btn-group { display: flex; justify-content: center; flex-wrap: wrap; gap: 22px; }
 
         footer { background: #050b16; color: white; text-align: center; padding: 35px 20px; }
-        footer p { color: rgba(255, 255, 255, 0.75); margin: 10px 0; }
+        footer p { color: rgba(255, 255, 255, 0.75); margin: 10px 0; line-height: 1.8; }
 
         @media(max-width:768px) {
             .navbar { padding: 15px 4%; }
@@ -153,8 +187,13 @@
             .hero h1 { font-size: 2.5rem; }
             .hero p { font-size: 1rem; }
             .contact-form .form-row { flex-direction: column; }
+            .contact-box { padding: 30px 24px; }
             .cta h2 { font-size: 2.2rem; }
             .map-title { font-size: 2rem; }
+            .map-frame iframe { height: 380px; }
+            .map-overlay-buttons { bottom: 12px; right: 12px; flex-direction: column; align-items: flex-end; gap: 8px; }
+            .map-btn { padding: 8px 14px; font-size: 0.8rem; }
+            .location-card { padding: 22px 20px; }
             .btn { width: 100%; min-width: 0; }
         }
     </style>
@@ -207,7 +246,7 @@
                         <option value="">Select a Service</option>
                         <option>Marine Logistics</option>
                         <option>Offshore Support</option>
-                        <option>Port & Vessel Assistance</option>
+                        <option>Port &amp; Vessel Assistance</option>
                         <option>Technical Support</option>
                     </select>
                 </div>
@@ -226,8 +265,7 @@
 
         <div class="contact-box">
             <h2>Operations Email</h2>
-            <a href="https://outlook.office.com/mail/deeplink/compose?to=operations@theblueradiance.com&subject=Business%20Inquiry" target="_blank" rel="noopener">operations@theblueradiance.com</a>
-            <br>
+            <a class="email-link" href="https://outlook.office.com/mail/deeplink/compose?to=operations@theblueradiance.com&subject=Business%20Inquiry" target="_blank" rel="noopener">operations@theblueradiance.com</a>
             <p>Marine logistics, offshore coordination, vessel operations and maritime support inquiries.</p>
         </div>
 
@@ -237,8 +275,7 @@
 
         <div class="contact-box">
             <h2>IT Department</h2>
-            <a href="https://outlook.office.com/mail/deeplink/compose?to=ithead@theblueradiance.com&subject=IT%20Support%20Request" target="_blank" rel="noopener">ithead@theblueradiance.com</a>
-            <br>
+            <a class="email-link" href="https://outlook.office.com/mail/deeplink/compose?to=ithead@theblueradiance.com&subject=IT%20Support%20Request" target="_blank" rel="noopener">ithead@theblueradiance.com</a>
             <p>Website support, technical assistance and digital communication inquiries.</p>
         </div>
 
@@ -257,6 +294,8 @@
                 Kingdom of Saudi Arabia
             </p>
             <br>
+            <a href="https://www.google.com/maps/search/?api=1&query=26.361759,50.194994" target="_blank" rel="noopener">View on Google Maps</a>
+            <br>
             <a href="https://www.theblueradiance.com" target="_blank" rel="noopener">www.theblueradiance.com</a>
         </div>
     </section>
@@ -264,7 +303,8 @@
     <section class="map-section">
         <div class="map-container">
             <h2 class="map-title">Our Location</h2>
-            <div class="location-card" style="background:white;border-radius:12px;padding:20px;box-shadow:0 12px 35px rgba(0,0,0,0.08);max-width:760px;margin:0 auto 20px;text-align:left;">
+
+            <div class="location-card">
                 <strong>Blue Radiance Marine Company</strong><br>
                 Building No. 3676<br>
                 Khalid Ibn Al Waleed Street<br>
@@ -272,8 +312,25 @@
                 Al Khobar 34225<br>
                 Kingdom of Saudi Arabia
             </div>
+
             <div class="map-frame">
-                <iframe src="https://www.google.com/maps?q=26.3242,50.1746&z=17&output=embed" loading="lazy"></iframe>
+                <iframe
+                    src="https://www.google.com/maps?q=26.361759,50.194994&z=17&output=embed"
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    title="Blue Radiance Marine Company Location"
+                    allowfullscreen></iframe>
+
+                <div class="map-overlay-buttons">
+                    <a href="https://www.google.com/maps/search/?api=1&query=26.361759,50.194994" target="_blank" rel="noopener" class="map-btn">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
+                        Google Maps
+                    </a>
+                    <a href="https://maps.apple.com/?ll=26.361759,50.194994&q=Blue%20Radiance%20Marine%20Company" target="_blank" rel="noopener" class="map-btn">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
+                        Apple Maps
+                    </a>
+                </div>
             </div>
         </div>
     </section>
